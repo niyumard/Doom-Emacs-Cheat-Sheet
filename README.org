@@ -171,8 +171,6 @@
 
 *** Priorities for Tasks
 - =SHIFT up= and =SHIFT down= will toggle the priority of tasks
-
-*** TODO buy strawberries
 - =org-fancy-priorities= gives you fancy looking priorities
 
 *** Marking Tasks with Tags
