@@ -1,4 +1,4 @@
-#+TITLE: The Ultimate Emacs Cheatsheet
+#+TITLE: The Ultimate Doom Emacs Cheatsheet
 * Command Abbreviations
 - =C= - "Control" key
 - =M= - "M" or "option/alt" key
