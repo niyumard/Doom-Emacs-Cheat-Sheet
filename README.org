@@ -238,32 +238,25 @@
 - Set up neotree in your init.el file.
 - =SPC o p= for neotree
 * Others
-** =C-c C-z= to insert a note for a heading.
+- =C-c C-z= to insert a note for a heading.
 :LOGBOOK:
-- Note taken on [2020-12-18 Fri 21:53] \\
-  Ha
-- Note taken on [2020-12-18 Fri 21:52] \\
-  Yeah
-- Note taken on [2020-12-18 Fri 21:52] \\
-  hi
 - Note taken on [2020-12-18 Fri 21:52] \\
   Like this!
 :END:
-** =C-c C-c= to insert a tag for a heading.
+- =C-c C-c= to insert a tag for a heading.
 * Capturing
-** =SPC X= to capture (the new thing gets caputured to a single file but that's fine since we can easily refile it.)
-** =SPC m r r= to refile
+- =SPC X= to capture (the new thing gets caputured to a single file but that's fine since we can easily refile it.)
+- =SPC m r r= to refile
 [[https://www.youtube.com/watch?v=BRqjaN4-gGQ&list=PLhXZp00uXBk4np17N39WvB80zgxlZfVwj&index=10][Link to youtube video series]]
 * What to learn [0/12]
-*** TODO Org-journal
-*** TODO Dragndrop
-*** TODO present
-*** TODO pretty
-*** TODO org-roam
-*** TODO org-brain
-*** TODO abbrev-mode
-*** TODO Deft
-*** TODO Org-super-agenda
-*** TODO  doct (Declarative Org Capture Templates)
-*** TODO graphviz-dot-mode
-*** TODO
+- [ ] Org-journal
+- [ ] Dragndrop
+- [ ] present
+- [ ] pretty
+- [ ] org-roam
+- [ ] org-brain
+- [ ] abbrev-mode
+- [ ] Deft
+- [ ] Org-super-agenda
+- [ ] doct (Declarative Org Capture Templates)
+- [ ] graphviz-dot-mode
