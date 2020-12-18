@@ -1,0 +1,269 @@
+#+TITLE: The Ultimate Emacs Cheatsheet
+* Command Abbreviations
+- =C= - "Control" key
+- =M= - "M" or "option/alt" key
+- =s= - "Command" key
+- =SPC= - "Space" key
+* General
+- =SPC f s= for saving the current file
+- =SPC := for entering a command
+- =SPC q q= to close Emacs
+- =SPC f D= to delete this file
+* Projects with Projectile
+- =SPC p p= to open a project
+- =SPC SPC= to open a file in a project
+- =SPC o p= to open the file explorer
+- =SPC o e= to open the shell in fullscreen
+- =SPC o E= to open the shell in a popup window
+- =SPC f r= recently visited files
+- =SPC f R= recently visited files in a project
+- =M-x projectile-discover-projects-in-directory= to find projects
+  within given folder using Projectile
+- =M-x projectile-discover-projects-in-search-path= to find projects in
+  the folder defined by the =projectile-project-search-path= variable
+  using Projectile
+* Dired
+- Dired (Directory Editor) is how you interfaces with a directory
+- Use =RET= to go to a folder or open a file.
+- Use =-= for going one folder back
+- Use =+= for creating a new directory
+- Use =d= to mark the files for deletion, press =x= to delete.
+- Use =M= to change permissions
+- Use =o= to sort by modes.
+- Use =O= to change the owner.
+- Use =m= to mark and =u= to unmark files or directories.
+- =U= to unselect all
+- Use =t= to invert the selection.
+- =t= to switch between files and directories
+- Use =C= to copy.
+- Use =R= to move.
+- Move with =h=, =j=, =k=, =l=
+- toggle =(= for simple view
+- =SPC .= to create or find a file
+- =*= to select all directories.
+- =C= copy to another window
+- =R= move to another window
+- =dired-do-what-i-mean-target= set to true
+- =i= to edit file/dir name
+* Buffers, Windows and Basic Navigation
+- Buffers are a special concept in emacs they can be terminals, files,
+  directories, etc
+- =SPC b b= to open another buffer
+  - workspace buffer
+- =SPC b B= you can see all the buffer
+- =SPC ,= to switch buffers (its an alias)
+- =SPC SHIFT ,= to switch to all buffers
+- =SPC b X= You can create a scratch buffer
+- =SPC b s= to save and name it
+- =CTRL w v= window split vertically
+- =CTRL w s= window split horizonal
+- =CTRL w w= to switch windows
+- You can use the vim motion keys to navigate between open windows
+- Windows are panes in your screen
+- =CTLR + == to make the windows equal size
+* Installing Packages with org-super-agenda as an example
+- =SPC f p= to open the config.
+- To add a package, add the package to =.doom.d/package.el=
+- Then close and =doom refresh=
+- Then go to =.doom.d/config.el= to configure the package
+- =def-package!= is a macro you can use to configure packages
+  - =space h help= you can look up method man pages
+  - =:init= is used for setting the package up
+  - =:config= to set configuration after the package has been
+    initialized
+  - =:after= lets you set which package it should load after
+- you can use =:after!= to configure packages that are already there
+* Quick, horizontal movements with evil-snipe
+** Inine navigation
+- =f= and then the letter you want to navigate to.
+  + =,= will go backward
+  + =;= will go forward after that "find"
+- =t= to find and move cursor to the charachter before what you've searched.
+- =v= puts you in visual mode. You can select text by with =v t some-char-you-navigate-to= or =v f some-char-you-navigate-to=
+- =;= to jump to the next find
+- =,= to jump to the previous one
+- =s= to snipe
+** Long distance navigation inside the file
+- Evil-snipe lets you go to all the occuranses in your document
+- =g s SPC= to use avy and going to a certain word in file.
+- =t= is the same thing except for a character you want to jump to before the one you insert
+- =s= to do a double character search
+- Evil-snipe will remember your last search so =,= and =;= will navigate
+- =F= or =T= to go backwards
+- =g s SPC= and then select the letter that avy gives you to navigate to that spot
+  - These letters are on your home row so they are easy to click
+- =SPC h v= for variable, to set the avy variable to search all open
+  windows
+  + =avy-all-windows= lets you search in all windows open.
+- you can remove a word with
+  =g s SPC select-one-letter x select-the-removal-spot=
+  + you can use =X= to stay in your original spot of search
+- you can go =g s space select-one-letter i select-the-correction-spot=
+  to correct the spelling of the search
+  - Install ispell on your OS first
+- You can =yank= a word from one place to another with
+  =g s SPC select-one-letter y select-the-correction-spot-to-paste=
+- Use =t= to "teleport" the word from one place to another
+  =g s SPC select-one-letter t select-the-correction-spot-to-teleport=
+* Multiple cursor in Emacs with Evil-multiedit
+- Make selections and then edit those selections interactively
+- =M d= will select the current word, and again will find another
+  occurance
+- =M D= will find the occurence upward
+- You can use a visual selection to select multiple words.
+- =R= will select all occurances
+- =CTRL n= for next selection =CTRL p= for previous
+- Exclude matches with =RET=
+- You can make an edit and the changes will be reflected in all the
+  selection
+* Org Mode
+** Basics
+- Org mode gives you structure to your document
+- =*= for a h1 =**= for an h2 and so on
+- you can =TAB= a section to fold a subtree (hide it)
+- you can use =SHIFT TAB= to cycle through folded states
+- =CTRL return= to create a headline of the same type
+- =M arrow up= lets you shift the position of the section
+- =M h= promotes a headline to the next level
+- =M l= demotes
+- you can create lists
+  1. onw
+  2. 2
+  3. wooo
+  4. 3
+** Links, Hyperlinks and more
+- =SPC m l= to add a link to an org page
+- You can add =::= to specify a heading or a line number
+- You can paste http links as well
+- You can "link" some text with specific code =SPC m l= elisp: [[elisp:(+ 2 2)][(+ 2 2)]] when you click the link, emacs will evaluate the expression
+- Show [[elisp:org-agenda][My Agenda]]
+- [[shell:ls][List Files]] in directory
+** Defining custoom Link Types
+- [[https://youtube.com/watch?v=Febe4lUK5G4][Whatch the video about custom links]]
+** Linking to words & Bookmarks
+- =SPC n l= stores a link to a particular headline
+** Code Snippets & Babel
+- =SPC i s= for inserting code snippets
+  + Example:
+   #+begin_src emacs-lisp :tangle yes
+  (+ 2 3 4 5)
+   #+end_src
+- =C-c C-c= to execute the code.
+- Results will show up in a =##+RESULTS= header
+- This feature is called Babel
+- One snippet can consume the output of another snippet
+** Task Management
+- Create a task by prefixing any heading with =TODO=
+- =DONE= means the task is done
+- You can create your custom key words by changing this variable: =org-todo-keywords=
+  - remember you can get to your variables through =SPC h v= (M-x counsel-describe-variable)
+  - These values are already set in Doom:
+    #+BEGIN_EXAMPLE
+           ((sequence "TODO(t)" "PROJ(p)" "STRT(s)" "WAIT(w)" "HOLD(h)" "|" "DONE(d)" "KILL(k)")
+        (sequence "[ ](T)" "[-](S)" "[?](W)" "|" "[X](D)"))
+    #+END_EXAMPLE
+- =SPC m t= to change a status of a todo
+- =SHIFT left= and =SHIFT right= can be used to change the status of a todo as well.
+- If you finish a task with a command, org mode will add a date that you "closed" the task.
+- =SPC o a t= to open the agenda -> todo list
+- =q= to quit
+- =org-agenda-files= is a variable you can set to filter which files agenda searches for todos in.
+
+*** Priorities for Tasks
+- =SHIFT up= and =SHIFT down= will toggle the priority of tasks
+
+*** TODO buy strawberries
+- =org-fancy-priorities= gives you fancy looking priorities
+
+*** Marking Tasks with Tags
+- Tags can be attached to any headlines
+- =SPC m q= to tag a headline
+- Example:
+  - TODO play more games :fun:
+- Tags are hierarchical so nested headings will be tagged with the
+  parent header tag
+- =org-tag-sparce-tree= will search for headings that only have a specific
+  tag
+** Lists
+- Two types of lists, ordered and unordered lists
+  - =SHIFT right= and =SHIFT left= can be used to change the type of lists.
+- You can also change an unorded list by changing the first item to 1. and then typing =C-c C-c= and vice verca.
+** Checkboxes
+- [ ] This is still todo
+- [-] This is in progress
+- [x] This is a done task
+*** You can see how many are done with a "cookie" [1/2]
+- [-] Task 1
+- [x] Task 2
+- You can do this by adding [/] to the heading and pressing =C-c C-c=
+- You can't assign a tag or a priority
+
+* Magit
+- magit is configured for you
+- =SPC g g= to show Magit status Page
+- most commands are done from the status page
+- press =?= to see what you can do
+- =git add -p= lets you stage in hunks
+- Open and close with the =TAB=
+- Open diff view for a file with =TAB=
+- =s= to stage a change
+- =u= to undo a change
+- =c= to commit
+- =b s= for branch and spinoff to create another branch, rewinding the
+  commits you made to master
+- =b b= to switch branches
+
+** Git Commit Flow in More Detail
+- =t t= to create a tag, default place is the commit you are currently
+  selecting
+- =V= to select a change in a diff and =x= to discard that change.
+- =s= to stage
+- =c= to commit, you can =q= to quit the commit screen
+- =P= to push and then =p= to your remote or =u= to a another remote
+** Magit with Forge for Issuing Pull Requests - Emacs
+- Forge is installed in emacs doom
+- =@= for forge
+- Set up forge with =M x forge-pull=
+  - the first time you will get a token from github
+- =@ c p= to create a pull request with forge
+  - select the base branch
+  - then select the target branch
+  - then provide a short description
+  - =CTRL c CTRL c= to finish the pull request
+- Now there will be a =pull requests= tab
+* Terminal
+- Set up vterm in your init.el file.
+- =SPC o T= for opening vterm
+* File Tree
+- Set up neotree in your init.el file.
+- =SPC o p= for neotree
+* Others
+** =C-c C-z= to insert a note for a heading.
+:LOGBOOK:
+- Note taken on [2020-12-18 Fri 21:53] \\
+  Ha
+- Note taken on [2020-12-18 Fri 21:52] \\
+  Yeah
+- Note taken on [2020-12-18 Fri 21:52] \\
+  hi
+- Note taken on [2020-12-18 Fri 21:52] \\
+  Like this!
+:END:
+** =C-c C-c= to insert a tag for a heading.
+* Capturing
+** =SPC X= to capture (the new thing gets caputured to a single file but that's fine since we can easily refile it.)
+** =SPC m r r= to refile
+[[https://www.youtube.com/watch?v=BRqjaN4-gGQ&list=PLhXZp00uXBk4np17N39WvB80zgxlZfVwj&index=10][Link to youtube video series]]
+* What to learn [0/12]
+*** TODO Org-journal
+*** TODO Dragndrop
+*** TODO present
+*** TODO pretty
+*** TODO org-roam
+*** TODO org-brain
+*** TODO abbrev-mode
+*** TODO Deft
+*** TODO Org-super-agenda
+*** TODO  doct (Declarative Org Capture Templates)
+*** TODO graphviz-dot-mode
+*** TODO
