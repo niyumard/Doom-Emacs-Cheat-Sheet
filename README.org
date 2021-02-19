@@ -237,12 +237,12 @@
 - Set up neotree in your init.el file.
 - =SPC o p= for neotree
 * Others
-- =C-c C-z= to insert a note for a heading.
+- =C-c C-z= to insert a note for a heading in org mode.
 :LOGBOOK:
 - Note taken on [2020-12-18 Fri 21:52] \\
   Like this!
 :END:
-- =C-c C-c= to insert a tag for a heading.
+- =C-c C-c= to insert a tag for a heading in org mode.
 * Capturing
 - =SPC X= to capture (the new thing gets caputured to a single file but that's fine since we can easily refile it.)
 - =SPC m r r= to refile
