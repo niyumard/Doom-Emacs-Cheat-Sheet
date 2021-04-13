@@ -256,7 +256,7 @@ Another HTML version of this org file, made with [[https://github.com/fniessen/o
 * Sources
 - [[https://www.youtube.com/watch?v=BRqjaN4-gGQ&list=PLhXZp00uXBk4np17N39WvB80zgxlZfVwj&index=10][Link to youtube video series]]
 - [[https://www.ianjones.us/zaiste-programming-doom-emacs-tutorial/#org7ad2452][This org file is mostly from the notes taken from the series above by ianjones.us]]
-* What to learn [0/12]
+* What to learn [0/4]
 - [ ] Org-journal
 - [ ] [[https://orgroam.com][Org Roam]]
 - [ ] abbrev-mode
