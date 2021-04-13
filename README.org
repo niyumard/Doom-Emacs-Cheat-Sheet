@@ -255,6 +255,6 @@
 - [[https://www.ianjones.us/zaiste-programming-doom-emacs-tutorial/#org7ad2452][This org file is mostly from the notes taken from the series above by ianjones.us]]
 * What to learn [0/12]
 - [ ] Org-journal
-- [ ] [[org-roam][https://orgroam.com]]
+- [ ] [[https://orgroam.com][Org Roam]]
 - [ ] abbrev-mode
 - [ ] Org-super-agenda
