@@ -1,6 +1,7 @@
 #+TITLE: The Ultimate Doom Emacs Cheatsheet
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
-HTML version of this org file is made with [[https://github.com/fniessen/org-html-themes][org-html-themes]] and is available [[https://naghdbishi.ir/Doom-Emacs-Cheat-Sheet/README.html][here]].
+HTML version of this org file (which is rendered better than what you currently see on GitHub) is made with [[https://github.com/fniessen/org-html-themes][org-html-themes]] and is available [[https://naghdbishi.ir/Doom-Emacs-Cheat-Sheet/README.html][here]].
+You can also [[https://raw.githubusercontent.com/niyumard/Doom-Emacs-Cheat-Sheet/main/README.org][download this file]] and open it in Emacs.
 * Command Abbreviations
 - =C= - "Control" key
 - =M= - "M" or "option/alt" key
@@ -41,7 +42,7 @@ HTML version of this org file is made with [[https://github.com/fniessen/org-htm
 - Use =C= to copy.
 - Use =R= to move.
 - Move with =h=, =j=, =k=, =l=
-- toggle =(= for simple view
+- Toggle =(= for simple view
 - =SPC .= to create or find a file
 - =*= to select all directories.
 - =C= copy to another window
@@ -75,7 +76,7 @@ HTML version of this org file is made with [[https://github.com/fniessen/org-htm
   - =:config= to set configuration after the package has been
     initialized
   - =:after= lets you set which package it should load after
-- you can use =:after!= to configure packages that are already there
+- You can use =:after!= to configure packages that are already there
 * Quick, horizontal movements with evil-snipe
 ** Inine navigation
 - =f= and then the letter you want to navigate to.
@@ -98,10 +99,10 @@ HTML version of this org file is made with [[https://github.com/fniessen/org-htm
 - =SPC h v= for variable, to set the avy variable to search all open
   windows
   + =avy-all-windows= lets you search in all windows open.
-- you can remove a word with
+- You can remove a word with
   =g s SPC select-one-letter x select-the-removal-spot=
-  + you can use =X= to stay in your original spot of search
-- you can go =g s space select-one-letter i select-the-correction-spot=
+  + You can use =X= to stay in your original spot of search
+- You can go =g s space select-one-letter i select-the-correction-spot=
   to correct the spelling of the search
   - Install ispell on your OS first
 - You can =yank= a word from one place to another with
@@ -123,13 +124,13 @@ HTML version of this org file is made with [[https://github.com/fniessen/org-htm
 ** Basics
 - Org mode gives you structure to your document
 - =*= for a h1 =**= for an h2 and so on
-- you can =TAB= a section to fold a subtree (hide it)
-- you can use =SHIFT TAB= to cycle through folded states
+- You can =TAB= a section to fold a subtree (hide it)
+- You can use =SHIFT TAB= to cycle through folded states
 - =CTRL return= to create a headline of the same type
 - =M arrow up= lets you shift the position of the section
 - =M h= promotes a headline to the next level
 - =M l= demotes
-- you can create lists
+- You can create lists
   1. onw
   2. 2
   3. wooo
