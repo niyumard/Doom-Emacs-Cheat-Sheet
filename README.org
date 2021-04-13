@@ -1,7 +1,7 @@
 #+TITLE: The Ultimate Doom Emacs Cheatsheet
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
-HTML version of this org file (which is rendered better than what you currently see on GitHub) is made with [[https://github.com/fniessen/org-html-themes][org-html-themes]] and is available [[https://naghdbishi.ir/Doom-Emacs-Cheat-Sheet/README.html][here]].
-You can also [[https://raw.githubusercontent.com/niyumard/Doom-Emacs-Cheat-Sheet/main/README.org][download this file]] and open it in Emacs.
+Because GitHub's render is incomplete, it is recommended that you [[https://raw.githubusercontent.com/niyumard/Doom-Emacs-Cheat-Sheet/main/README.org][download this file]] and open it in Emacs.
+Another HTML version of this org file made with [[https://github.com/fniessen/org-html-themes][org-html-themes]] (which is rendered better than what you currently see on GitHub, but is still incomplete) and is also available [[https://naghdbishi.ir/Doom-Emacs-Cheat-Sheet/README.html][here]].
 * Command Abbreviations
 - =C= - "Control" key
 - =M= - "M" or "option/alt" key
