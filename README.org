@@ -255,13 +255,6 @@
 - [[https://www.ianjones.us/zaiste-programming-doom-emacs-tutorial/#org7ad2452][This org file is mostly from the notes taken from the series above by ianjones.us]]
 * What to learn [0/12]
 - [ ] Org-journal
-- [ ] Dragndrop
-- [ ] present
-- [ ] pretty
-- [ ] org-roam
-- [ ] org-brain
+- [ ] [[org-roam][https://orgroam.com]]
 - [ ] abbrev-mode
-- [ ] Deft
 - [ ] Org-super-agenda
-- [ ] doct (Declarative Org Capture Templates)
-- [ ] graphviz-dot-mode
