@@ -193,10 +193,10 @@ Another HTML version of this org file, made with [[https://github.com/fniessen/o
 ** Checkboxes
 - [ ] This is still todo
 - [-] This is in progress
-- [x] This is a done task
+- [X] This is a done task
 *** You can see how many are done with a "cookie" [1/2]
 - [-] Task 1
-- [x] Task 2
+- [X] Task 2
 - You can do this by adding [/] to the heading and pressing =C-c C-c=
 - You can't assign a tag or a priority
 
