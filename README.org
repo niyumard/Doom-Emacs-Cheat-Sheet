@@ -186,6 +186,15 @@ Another HTML version of this org file, made with [[https://github.com/fniessen/o
   parent header tag
 - =org-tag-sparce-tree= will search for headings that only have a specific
   tag
+
+*** Setting a poperty for a task/headline
+- =SPC m o= is used for setting a property.
+**** Marking Headlines with Categories
+- You can use [[https://orgmode.org/manual/Categories.html][categories]] to change the label in agenda view.
+**** Org-Habits
+- If you want to [[https://orgmode.org/manual/Tracking-your-habits.html][keep track of your habits]] using org mode, you can set the =STYLE= property to habit.
+
+  - If you want to set a category (for chani 
 ** Lists
 - Two types of lists, ordered and unordered lists
   - =SHIFT right= and =SHIFT left= can be used to change the type of lists.
