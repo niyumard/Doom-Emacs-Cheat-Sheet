@@ -157,6 +157,7 @@ Another HTML version of this org file, made with [[https://github.com/fniessen/o
 - Results will show up in a =##+RESULTS= header
 - This feature is called Babel
 - One snippet can consume the output of another snippet
+- You can create your own snippets in the following directory: =~/.doom.d/snippets/=
 ** Task Management
 - Create a task by prefixing any heading with =TODO=
 - =DONE= means the task is done
