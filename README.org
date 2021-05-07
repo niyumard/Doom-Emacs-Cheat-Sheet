@@ -153,6 +153,7 @@ Another HTML version of this org file, made with [[https://github.com/fniessen/o
   (+ 2 3 4 5)
    #+end_src
 - =C-c C-c= to execute the code.
+- =SPC m '= to edit inside the babel in another buffer.
 - Results will show up in a =##+RESULTS= header
 - This feature is called Babel
 - One snippet can consume the output of another snippet
