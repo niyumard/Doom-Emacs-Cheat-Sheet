@@ -16,8 +16,8 @@ Another HTML version of this org file, made with [[https://github.com/fniessen/o
 - =SPC p p= to open a project
 - =SPC SPC= to open a file in a project
 - =SPC o p= to open the file explorer
-- =SPC o E= to open the shell in fullscreen
-- =SPC o e= to open the shell in a popup window
+- =SPC o E= to open the shell (eshell) in fullscreen
+- =SPC o e= to open the shell (eshell) in a popup window
 - =SPC f r= recently visited files
 - =SPC f R= recently visited files in a project
 - =M-x projectile-discover-projects-in-directory= to find projects
