@@ -260,9 +260,15 @@ Another HTML version of this org file, made with [[https://github.com/fniessen/o
 * Capturing
 - =SPC X= to capture (the new thing gets caputured to a single file but that's fine since we can easily refile it.)
 - =SPC m r r= to refile
-* Org Roam
+* Org Mode
 ** Tags
 - =SPC m m t= to put roam tags on an org file.
+* Org Roam
+These keybinding only work after installing org-roam. To install org roam edit your =init.el= file and add =(org +roam2)= in its designated place. Watch [[this video][https://www.youtube.com/watch?v=AyhPmypHDEw]] to understand what org-roam is.
+
+- =SPC n r f= Find an existing node or create a new one.
+- =SPC n r i= Insert a link to another node.
+- =SPC n r r= Toggle backlinks pane 
 
 * Sources
 - [[https://www.youtube.com/watch?v=BRqjaN4-gGQ&list=PLhXZp00uXBk4np17N39WvB80zgxlZfVwj&index=10][Link to youtube video series]]
