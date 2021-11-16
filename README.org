@@ -64,7 +64,10 @@ Another HTML version of this org file, made with [[https://github.com/fniessen/o
 - =CTRL w v= window split vertically
 - =CTRL w s= window split horizonal
 - =CTRL w w= to switch windows
-- You can use the vim motion keys to navigate between open windows
+- =SPC w q= to kill windows
+- =SPC w += and =SPC w -= to increase and decrease window height
+- =SPC w >= and =SPC w <= to increase and decrease window width
+- You can use vim motion keys to navigate between open windows for example =SPC w H= moves the window to the left.
 - Windows are panes in your screen
 ** Workspaces
 - =SPC TAB n= New workspace
