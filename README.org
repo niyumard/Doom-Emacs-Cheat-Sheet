@@ -50,6 +50,7 @@ Another HTML version of this org file, made with [[https://github.com/fniessen/o
 - =dired-do-what-i-mean-target= set to true
 - =i= to edit file/dir name
 * Buffers, Windows and Basic Navigation
+** Buffers
 - Buffers are a special concept in emacs they can be terminals, files,
   directories, etc
 - =SPC b b= to open another buffer
@@ -59,13 +60,22 @@ Another HTML version of this org file, made with [[https://github.com/fniessen/o
 - =SPC SHIFT ,= to switch to all buffers
 - =SPC b X= You can create a scratch buffer
 - =SPC b s= to save and name it
+** Windows
 - =CTRL w v= window split vertically
 - =CTRL w s= window split horizonal
 - =CTRL w w= to switch windows
 - You can use the vim motion keys to navigate between open windows
-- Windows are panes in your screen
-- =CTLR + == to make the windows equal size
-* Installing Packages with org-super-agenda as an example
+- Windows are panes in your screenZ
+** Workspaces
+- =SPC TAB n= New workspace
+- =SPC TAB N= Newly named workspace
+- =SPC TAB [= Previous workspace
+- =SPC TAB ]= Next workspace
+- =SPC TAB d= Remove workspace
+- =SPC TAB R= Restore last session
+- =M-1= Switch to workspace 1
+- =M-2= Switch to workspace 2 and so forth.
+* Installing Packages using org-super-agenda as an example
 - =SPC f p= to open the config.
 - To add a package, add the package to =.doom.d/package.el=
 - Then close and =doom refresh=
