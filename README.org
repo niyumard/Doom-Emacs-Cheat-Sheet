@@ -65,7 +65,7 @@ Another HTML version of this org file, made with [[https://github.com/fniessen/o
 - =CTRL w s= window split horizonal
 - =CTRL w w= to switch windows
 - You can use the vim motion keys to navigate between open windows
-- Windows are panes in your screenZ
+- Windows are panes in your screen
 ** Workspaces
 - =SPC TAB n= New workspace
 - =SPC TAB N= Newly named workspace
