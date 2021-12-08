@@ -230,16 +230,15 @@
 - You can't assign a tag or a priority
 
 * Magit
-- magit is configured for you
-- =SPC g g= to show Magit status Page
-- most commands are done from the status page
-- press =?= to see what you can do
-- =git add -p= lets you stage in hunks
-- Open and close with the =TAB=
+- Magit is enabled by default in Doom Emacs's init.el
+- =SPC g g= shows Magit status page
+  + Most commands are done from the status page
+  + Use tab to expand headlines in the status page
+- =?= in Magit's status page for a nice list of available commands and help, =q= to close this help page
 - Open diff view for a file with =TAB=
-- =s= to stage a change
-- =u= to undo a change
-- =c= to commit
+- Press =s= under "Unstaged changes" to stage a change
+  + =u= to undo a change
+  + =c= to commit
 - =b s= for branch and spinoff to create another branch, rewinding the
   commits you made to master
 - =b b= to switch branches
