@@ -31,7 +31,7 @@
   using Projectile
 * Dired
 - Dired (Directory Editor) is how you interfaces with a directory
-- Press =C-x d= to open dired.
+- Press =C-x d= or =SPC .= to open dired.
 - Use =RET= to go to a folder or open a file.
 - Use =-= for going one folder back
 - Use =+= for creating a new directory
@@ -264,9 +264,10 @@
 * Terminal
 - Set up vterm in your init.el file.
 - =SPC o T= for opening vterm
+- =SPC o t= for opening vterm in horizontal split
 * File Tree
-- Set up neotree in your init.el file.
-- =SPC o p= for neotree
+- Set up neotree or treemacs in your init.el file.
+- =SPC o p= for opening neotree or treemacs
 * Others
 - =C-c C-z= to insert a note for a heading in org mode.
 :LOGBOOK:
