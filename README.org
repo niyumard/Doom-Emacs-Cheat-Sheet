@@ -264,9 +264,10 @@
 * Terminal
 - Set up vterm in your init.el file.
 - =SPC o T= for opening vterm
+- =SPC o t= for opening vterm in a popup window
 * File Tree
-- Set up neotree in your init.el file.
-- =SPC o p= for neotree
+- Set up neotree or treemacs in your init.el file.
+- =SPC o p= for opening neotree or treemacs
 * Others
 - =C-c C-z= to insert a note for a heading in org mode.
 :LOGBOOK:
