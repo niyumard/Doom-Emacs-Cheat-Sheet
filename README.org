@@ -68,7 +68,7 @@
 - =SPC w v= window split vertically
 - =SPC w s= window split horizonal
 - =SPC w w= to switch windows
-- =SPC w q= to quit EMACS
+- =SPC w q= to close window, frame, quit EMACS if last frame
 - =SPC w += and =SPC w -= to increase and decrease window height
 - =SPC w >= and =SPC w <= to increase and decrease window width
 - You can use vim motion keys to navigate between open windows for example =SPC w H= moves the window to the left.
