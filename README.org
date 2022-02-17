@@ -8,8 +8,8 @@
 - Github doesn't render org files very well. It's best that you [[https://raw.githubusercontent.com/niyumard/Doom-Emacs-Cheat-Sheet/main/README.org][download this file]] and open it in Emacs. If not possible, use the [[https://naghdbishi.ir/Doom-Emacs-Cheat-Sheet/README.html][html version]] made with [[https://github.com/fniessen/org-html-themes][org-html-themes]]
 * Command Abbreviations
 - =C= - "Control" key
-- =M= - "M" or "option/alt" key
-- =s= - "Command" key
+- =M= - "Alt" or "Option" key
+- =S= - "Super" or "Command" key
 - =SPC= - "Space" key
 * General
 - =SPC f s= for saving the current file
@@ -65,10 +65,10 @@
 - =SPC b X= You can create a scratch buffer
 - =SPC b s= to save and name it
 ** Windows
-- =CTRL w v= window split vertically
-- =CTRL w s= window split horizonal
-- =CTRL w w= to switch windows
-- =SPC w q= to kill windows
+- =SPC w v= window split vertically
+- =SPC w s= window split horizonal
+- =SPC w w= to switch windows
+- =SPC w q= to close window, frame, quit EMACS if last frame
 - =SPC w += and =SPC w -= to increase and decrease window height
 - =SPC w >= and =SPC w <= to increase and decrease window width
 - You can use vim motion keys to navigate between open windows for example =SPC w H= moves the window to the left.
@@ -105,7 +105,7 @@
 - =,= to jump to the previous one
 - =s= to snipe
 ** Long distance navigation inside the file
-- Evil-snipe lets you go to all the occuranses in your document
+- Evil-snipe lets you go to all the occurrences in your document
 - =g s SPC= to use avy and going to a certain word in file.
 - =t= is the same thing except for a character you want to jump to before the one you insert
 - =s= to do a double character search
@@ -128,11 +128,11 @@
   =g s SPC select-one-letter t select-the-correction-spot-to-teleport=
 * Multiple cursor in Emacs with Evil-multiedit
 - Make selections and then edit those selections interactively
-- =M d= will select the current word, and again will find another
-  occurance
-- =M D= will find the occurence upward
+- =M-d= will select the current word, and again will find another
+  occurrence
+- =M-D= will find the occurrence upward
 - You can use a visual selection to select multiple words.
-- =R= will select all occurances
+- =R= will select all occurrences
 - =CTRL n= for next selection =CTRL p= for previous
 - Exclude matches with =RET=
 - You can make an edit and the changes will be reflected in all the
@@ -144,9 +144,9 @@
 - You can =TAB= a section to fold a subtree (hide it)
 - You can use =SHIFT TAB= to cycle through folded states
 - =CTRL return= to create a headline of the same type
-- =M arrow up= lets you shift the position of the section
-- =M h= promotes a headline to the next level
-- =M l= demotes
+- =M-arrow up= lets you shift the position of the section
+- =M-h= promotes a headline to the next level
+- =M-l= demotes
 - You can create lists
   1. onw
   2. 2
