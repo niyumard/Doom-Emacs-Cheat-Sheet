@@ -5,6 +5,7 @@
 - Learn to use [[https://www.emacswiki.org/emacs/EmacsClient][emacsclient]] and set up a daemon, your Emacs experience will improve *a lot* and you'll save a lot of time.
 - Learn to use Emacs's inner file manager.
 - Try to avoid terminal version of emacs when possible.
+- =SPC h w= helps you find keyboard shortcuts for different commands, and =SPC h k= tells you how key combinations translate to emacs commands. 
 - Github doesn't render org files very well. It's best that you [[https://raw.githubusercontent.com/niyumard/Doom-Emacs-Cheat-Sheet/main/README.org][download this file]] and open it in Emacs. If not possible, use the [[https://naghdbishi.ir/Doom-Emacs-Cheat-Sheet/README.html][html version]] made with [[https://github.com/fniessen/org-html-themes][org-html-themes]]
 * Command Abbreviations
 - =C= - "Control" key
