@@ -2,8 +2,16 @@
 * Config
 - Don't forget to uncomment =python= in =init.el=
   - Change enable =lsp= under =:tools= and change =python= to =(python +lsp)= if you're planning to use a [[https://en.wikipedia.org/wiki/Language_Server_Protocol][Language Protocol Server]] using [[http://emacs-lsp.github.io/][lsp-mode]].
+  - Enable =(company +childframe)= under =:complection= as well.
 * Basics
 - =M-x run-python= to open a python shell.
   - =python-shell-send-region= or =C-c C-r= to send a selected region to the shell.
   - =python-shell-send-file= or =C-c C-l= to send another file to the shell.
   - =python-shell-send-buffer= or =C-c C-c= to send a selected region to the shell.
+* LSP-Mode
+- =lsp-update-server= select a language server to update.
+- =flycheck-list-errors= to see the errors detected by LSP.
+
+
+* Sources
+- https://youtu.be/jPXIP46BnNA
