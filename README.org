@@ -2,10 +2,15 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
 * A few tips for Emacs newbies
-- Learn to use [[https://www.emacswiki.org/emacs/EmacsClient][emacsclient]] and set up a daemon, your Emacs experience will improve *a lot* and you'll save a lot of time.
-- Learn to use Emacs's inner file manager.
-- Try to avoid terminal version of emacs when possible.
-- =SPC h w= helps you find keyboard shortcuts for different commands, and =SPC h k= tells you how key combinations translate to emacs commands. 
+- Use [[https://www.emacswiki.org/emacs/EmacsClient][emacsclient]] and set up a daemon, your Emacs experience will improve *a lot* and you will save a lot of time.
+- For better experience, use Emacs's inner file manager.
+- Get [[https://emacs-lsp.github.io/lsp-mode/][LSP]] up and running. It will turn Emacs into a fully-featured modern IDE. Emacs supports LSP for almost every language.
+- Try to avoid terminal version of Emacs when possible.
+- Use Doom Emacs's built-in helps to understand how things work under the hood and change them to suit your needs.
+  - =SPC h k= tells you how key combinations translate to Emacs commands.
+  - =SPC h w= helps you find keyboard shortcuts for different commands.
+  - =SPC h v= lets you see what's inside variables and change them.
+  - =SPC h f= tells you about functions and where they are defined.
 - Github doesn't render org files very well. It's best that you [[https://raw.githubusercontent.com/niyumard/Doom-Emacs-Cheat-Sheet/main/README.org][download this file]] and open it in Emacs. If not possible, use the [[https://naghdbishi.ir/Doom-Emacs-Cheat-Sheet/README.html][html version]] made with [[https://github.com/fniessen/org-html-themes][org-html-themes]]
 * Command Abbreviations
 - =C= - "Control" key
@@ -289,9 +294,11 @@ These keybinding only work after installing org-roam. To install org roam edit y
 - =SPC m m o a= Add a roam alias.
 
 * Sources
-- [[https://www.youtube.com/watch?v=BRqjaN4-gGQ&list=PLhXZp00uXBk4np17N39WvB80zgxlZfVwj&index=10][Link to youtube video series]]
+- [[https://www.youtube.com/watch?v=BRqjaN4-gGQ&list=PLhXZp00uXBk4np17N39WvB80zgxlZfVwj&index=10][Link to the youtube video series]]
 - [[https://www.ianjones.us/zaiste-programming-doom-emacs-tutorial/#org7ad2452][This org file is mostly from the notes taken from the series above by ianjones.us]]
-- [[https://www.youtube.com/watch?v=s0ed8Da3mjE][Three Huge Mistakes New Emacs Users Make]] (they are included in the tips above)
+- [[https://github.com/doomemacs/doomemacs][Doom Emacs Documentation]]
+- [[https://www.youtube.com/watch?v=s0ed8Da3mjE][Three Huge Mistakes New Emacs Users Make]] (they are included in the tips in the beginning of the file)
+
 * What to learn [0/2]
 - [ ] [[https://orgroam.com][Org Roam]]
 - [ ] abbrev-mode

@@ -1,833 +1,921 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-17 Wed 00:14 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Ultimate Doom Emacs Cheatsheet</title>
-<meta name="author" content="Hossein Naghdbishi" />
-<meta name="generator" content="Org Mode" />
-<style>
-  #content { max-width: 60em; margin: auto; }
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: auto;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    top: -8px;
-    right: 12px;
-    padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
-  }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
+  <!-- 2022-08-01 Mon 10:30 -->
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=utf-8" />
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1" />
+  <title>The Ultimate Doom Emacs Cheatsheet</title>
+  <meta name="author" content="Hossein Naghdbishi" />
+  <meta name="generator" content="Org Mode" />
+  <link rel="stylesheet" type="text/css" href=
+  "https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css" />
+  <link rel="stylesheet" type="text/css" href=
+  "https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css" />
 
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-</style>
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+  <script src=
+  "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src=
+  "https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+  <script type="text/javascript" src=
+  "https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
 </head>
 <body>
-<div id="content" class="content">
-<h1 class="title">The Ultimate Doom Emacs Cheatsheet</h1>
-<div id="table-of-contents" role="doc-toc">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
-<ul>
-<li><a href="#org7590b20">1. A few tips for Emacs newbies</a></li>
-<li><a href="#orgc66952c">2. Command Abbreviations</a></li>
-<li><a href="#orgbd3b08d">3. General</a></li>
-<li><a href="#orga06ffba">4. Projects with Projectile</a></li>
-<li><a href="#org7ea6b6f">5. Dired</a></li>
-<li><a href="#org5424a93">6. Buffers, Windows and Basic Navigation</a>
-<ul>
-<li><a href="#org7465159">6.1. Buffers</a></li>
-<li><a href="#org40aac09">6.2. Windows</a></li>
-<li><a href="#orge5e8a5c">6.3. Workspaces</a></li>
-</ul>
-</li>
-<li><a href="#orgdd329c8">7. Installing Packages using org-super-agenda as an example</a></li>
-<li><a href="#orga100aff">8. Quick, horizontal movements with evil-snipe</a>
-<ul>
-<li><a href="#orgf374984">8.1. Inine navigation</a></li>
-<li><a href="#org2847e74">8.2. Long distance navigation inside the file</a></li>
-</ul>
-</li>
-<li><a href="#org4700314">9. Multiple cursor in Emacs with Evil-multiedit</a></li>
-<li><a href="#org3742fdd">10. Org Mode</a>
-<ul>
-<li><a href="#org93e23e9">10.1. Basics</a></li>
-<li><a href="#orgd86db83">10.2. Links, Hyperlinks and more</a></li>
-<li><a href="#orgf2eac2b">10.3. Defining custoom Link Types</a></li>
-<li><a href="#org994f865">10.4. Linking to words &amp; Bookmarks</a></li>
-<li><a href="#org5149c05">10.5. Code Snippets &amp; Babel</a></li>
-<li><a href="#org0527eeb">10.6. Task Management</a>
-<ul>
-<li><a href="#orgd401f1b">10.6.1. Priorities for Tasks</a></li>
-<li><a href="#orgc9e3975">10.6.2. Marking Tasks with Tags</a></li>
-<li><a href="#org8616956">10.6.3. Setting a poperty for a task/headline</a></li>
-</ul>
-</li>
-<li><a href="#org4422b97">10.7. Lists</a></li>
-<li><a href="#org07f3b12">10.8. Checkboxes</a>
-<ul>
-<li><a href="#org65378d5">10.8.1. You can see how many are done with a &ldquo;cookie&rdquo; <code>[1/2]</code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orga4062cb">11. Magit</a>
-<ul>
-<li><a href="#org6233002">11.1. Git Commit Flow in More Detail</a></li>
-<li><a href="#org7f8a9d2">11.2. Magit with Forge for Issuing Pull Requests - Emacs</a></li>
-</ul>
-</li>
-<li><a href="#org8760360">12. Terminal</a></li>
-<li><a href="#org1e70de6">13. File Tree</a></li>
-<li><a href="#org3fae2c4">14. Others</a></li>
-<li><a href="#orgf7f34e7">15. Capturing</a></li>
-<li><a href="#org6b8c4b9">16. Org Roam</a></li>
-<li><a href="#org1e52724">17. Sources</a></li>
-<li><a href="#orga354843">18. What to learn <code>[0/4]</code></a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org7590b20" class="outline-2">
-<h2 id="org7590b20"><span class="section-number-2">1.</span> A few tips for Emacs newbies</h2>
-<div class="outline-text-2" id="text-1">
-<ul class="org-ul">
-<li>If you learn to use <a href="https://www.emacswiki.org/emacs/EmacsClient">emacsclient</a> and set up a daemon your Emacs experience will improve <b>a lot</b> and you&rsquo;ll live a longer life.</li>
-<li>Learn to use Emacs&rsquo;s inner file manager.</li>
-<li>Try to avoid terminal version of emacs when possible.</li>
-<li>Github doesn&rsquo;t render org files very well. It&rsquo;s best that you <a href="https://raw.githubusercontent.com/niyumard/Doom-Emacs-Cheat-Sheet/main/README.org">download this file</a> and open it in Emacs. If not possible, use the <a href="https://naghdbishi.ir/Doom-Emacs-Cheat-Sheet/README.html">html version</a> made with <a href="https://github.com/fniessen/org-html-themes">org-html-themes</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgc66952c" class="outline-2">
-<h2 id="orgc66952c"><span class="section-number-2">2.</span> Command Abbreviations</h2>
-<div class="outline-text-2" id="text-2">
-<ul class="org-ul">
-<li><code>C</code> - &ldquo;Control&rdquo; key</li>
-<li><code>M</code> - &ldquo;M&rdquo; or &ldquo;option/alt&rdquo; key</li>
-<li><code>s</code> - &ldquo;Command&rdquo; key</li>
-<li><code>SPC</code> - &ldquo;Space&rdquo; key</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgbd3b08d" class="outline-2">
-<h2 id="orgbd3b08d"><span class="section-number-2">3.</span> General</h2>
-<div class="outline-text-2" id="text-3">
-<ul class="org-ul">
-<li><code>SPC f s</code> for saving the current file</li>
-<li><code>SPC :</code> for entering a command</li>
-<li><code>SPC q q</code> to close Emacs</li>
-<li><code>SPC f D</code> to delete this file</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orga06ffba" class="outline-2">
-<h2 id="orga06ffba"><span class="section-number-2">4.</span> Projects with Projectile</h2>
-<div class="outline-text-2" id="text-4">
-<ul class="org-ul">
-<li><code>SPC p p</code> to open a project</li>
-<li><code>SPC SPC</code> to open a file in a project</li>
-<li><code>SPC o p</code> to open the file explorer</li>
-<li><code>SPC o E</code> to open the shell (eshell) in fullscreen</li>
-<li><code>SPC o e</code> to open the shell (eshell) in a popup window</li>
-<li><code>SPC f r</code> recently visited files</li>
-<li><code>SPC f R</code> recently visited files in a project</li>
-<li><code>M-x projectile-discover-projects-in-directory</code> to find projects
-within given folder using Projectile</li>
-<li><code>M-x projectile-discover-projects-in-search-path</code> to find projects in
-the folder defined by the <code>projectile-project-search-path</code> variable
-using Projectile</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org7ea6b6f" class="outline-2">
-<h2 id="org7ea6b6f"><span class="section-number-2">5.</span> Dired</h2>
-<div class="outline-text-2" id="text-5">
-<ul class="org-ul">
-<li>Dired (Directory Editor) is how you interfaces with a directory</li>
-<li>Press <code>C-x d</code> to open dired.
-<li>Use <code>RET</code> to go to a folder or open a file.</li>
-<li>Use <code>-</code> for going one folder back</li>
-<li>Use <code>+</code> for creating a new directory</li>
-<li>Use <code>d</code> to mark the files for deletion, press <code>x</code> to delete.</li>
-<li>Use <code>M</code> to change permissions</li>
-<li>Use <code>o</code> to sort by modes.</li>
-<li>Use <code>O</code> to change the owner.</li>
-<li>Use <code>m</code> to mark and <code>u</code> to unmark files or directories.</li>
-<li><code>U</code> to unselect all</li>
-<li>Use <code>t</code> to invert the selection.</li>
-<li><code>t</code> to switch between files and directories</li>
-<li>Use <code>C</code> to copy.</li>
-<li>Use <code>R</code> to move.</li>
-<li>Move with <code>h</code>, <code>j</code>, <code>k</code>, <code>l</code></li>
-<li>Toggle <code>(</code> for simple view</li>
-<li><code>SPC .</code> to create or find a file</li>
-<li><code>*</code> to select all directories.</li>
-<li><code>C</code> copy to another window</li>
-<li><code>R</code> move to another window</li>
-<li><code>dired-do-what-i-mean-target</code> set to true</li>
-<li><code>i</code> to edit file/dir name</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org5424a93" class="outline-2">
-<h2 id="org5424a93"><span class="section-number-2">6.</span> Buffers, Windows and Basic Navigation</h2>
-<div class="outline-text-2" id="text-6">
-</div>
-<div id="outline-container-org7465159" class="outline-3">
-<h3 id="org7465159"><span class="section-number-3">6.1.</span> Buffers</h3>
-<div class="outline-text-3" id="text-6-1">
-<ul class="org-ul">
-<li>Buffers are a special concept in emacs they can be terminals, files,
-directories, etc</li>
-<li><code>SPC b b</code> to open another buffer
-<ul class="org-ul">
-<li>workspace buffer</li>
-</ul></li>
-<li><code>SPC b B</code> you can see all the buffer</li>
-<li><code>SPC ,</code> to switch buffers (its an alias)</li>
-<li><code>SPC SHIFT ,</code> to switch to all buffers</li>
-<li><code>SPC b X</code> You can create a scratch buffer</li>
-<li><code>SPC b s</code> to save and name it</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org40aac09" class="outline-3">
-<h3 id="org40aac09"><span class="section-number-3">6.2.</span> Windows</h3>
-<div class="outline-text-3" id="text-6-2">
-<ul class="org-ul">
-<li><code>CTRL w v</code> window split vertically</li>
-<li><code>CTRL w s</code> window split horizonal</li>
-<li><code>CTRL w w</code> to switch windows</li>
-<li><code>SPC w q</code> to kill windows</li>
-<li><code>SPC w +</code> and <code>SPC w -</code> to increase and decrease window height</li>
-<li><code>SPC w &gt;</code> and <code>SPC w &lt;</code> to increase and decrease window width</li>
-<li>You can use vim motion keys to navigate between open windows for example <code>SPC w H</code> moves the window to the left.</li>
-<li>Windows are panes in your screen</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orge5e8a5c" class="outline-3">
-<h3 id="orge5e8a5c"><span class="section-number-3">6.3.</span> Workspaces</h3>
-<div class="outline-text-3" id="text-6-3">
-<ul class="org-ul">
-<li><code>SPC TAB n</code> New workspace</li>
-<li><code>SPC TAB N</code> Newly named workspace</li>
-<li><code>SPC TAB [</code> Previous workspace</li>
-<li><code>SPC TAB ]</code> Next workspace</li>
-<li><code>SPC TAB d</code> Remove workspace</li>
-<li><code>SPC TAB R</code> Restore last session</li>
-<li><code>M-1</code> Switch to workspace 1</li>
-<li><code>M-2</code> Switch to workspace 2 and so forth.</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-orgdd329c8" class="outline-2">
-<h2 id="orgdd329c8"><span class="section-number-2">7.</span> Installing Packages using org-super-agenda as an example</h2>
-<div class="outline-text-2" id="text-7">
-<ul class="org-ul">
-<li><code>SPC f p</code> to open the config.</li>
-<li>To add a package, add the package to <code>.doom.d/package.el</code></li>
-<li>Then close and <code>doom refresh</code></li>
-<li>Then go to <code>.doom.d/config.el</code> to configure the package</li>
-<li><code>def-package!</code> is a macro you can use to configure packages
-<ul class="org-ul">
-<li><code>space h help</code> you can look up method man pages</li>
-<li><code>:init</code> is used for setting the package up</li>
-<li><code>:config</code> to set configuration after the package has been
-initialized</li>
-<li><code>:after</code> lets you set which package it should load after</li>
-</ul></li>
-<li>You can use <code>:after!</code> to configure packages that are already there</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orga100aff" class="outline-2">
-<h2 id="orga100aff"><span class="section-number-2">8.</span> Quick, horizontal movements with evil-snipe</h2>
-<div class="outline-text-2" id="text-8">
-</div>
-<div id="outline-container-orgf374984" class="outline-3">
-<h3 id="orgf374984"><span class="section-number-3">8.1.</span> Inine navigation</h3>
-<div class="outline-text-3" id="text-8-1">
-<ul class="org-ul">
-<li><code>f</code> and then the letter you want to navigate to.
-<ul class="org-ul">
-<li><code>,</code> will go backward</li>
-<li><code>;</code> will go forward after that &ldquo;find&rdquo;</li>
-</ul></li>
-<li><code>t</code> to find and move cursor to the charachter before what you&rsquo;ve searched.</li>
-<li><code>v</code> puts you in visual mode. You can select text by with <code>v t some-char-you-navigate-to</code> or <code>v f some-char-you-navigate-to</code></li>
-<li><code>;</code> to jump to the next find</li>
-<li><code>,</code> to jump to the previous one</li>
-<li><code>s</code> to snipe</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org2847e74" class="outline-3">
-<h3 id="org2847e74"><span class="section-number-3">8.2.</span> Long distance navigation inside the file</h3>
-<div class="outline-text-3" id="text-8-2">
-<ul class="org-ul">
-<li>Evil-snipe lets you go to all the occuranses in your document</li>
-<li><code>g s SPC</code> to use avy and going to a certain word in file.</li>
-<li><code>t</code> is the same thing except for a character you want to jump to before the one you insert</li>
-<li><code>s</code> to do a double character search</li>
-<li>Evil-snipe will remember your last search so <code>,</code> and <code>;</code> will navigate</li>
-<li><code>F</code> or <code>T</code> to go backwards</li>
-<li><code>g s SPC</code> and then select the letter that avy gives you to navigate to that spot
-<ul class="org-ul">
-<li>These letters are on your home row so they are easy to click</li>
-</ul></li>
-<li><code>SPC h v</code> for variable, to set the avy variable to search all open
-windows
-<ul class="org-ul">
-<li><code>avy-all-windows</code> lets you search in all windows open.</li>
-</ul></li>
-<li>You can remove a word with
-<code>g s SPC select-one-letter x select-the-removal-spot</code>
-<ul class="org-ul">
-<li>You can use <code>X</code> to stay in your original spot of search</li>
-</ul></li>
-<li>You can go <code>g s space select-one-letter i select-the-correction-spot</code>
-to correct the spelling of the search
-<ul class="org-ul">
-<li>Install ispell on your OS first</li>
-</ul></li>
-<li>You can <code>yank</code> a word from one place to another with
-<code>g s SPC select-one-letter y select-the-correction-spot-to-paste</code></li>
-<li>Use <code>t</code> to &ldquo;teleport&rdquo; the word from one place to another
-<code>g s SPC select-one-letter t select-the-correction-spot-to-teleport</code></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org4700314" class="outline-2">
-<h2 id="org4700314"><span class="section-number-2">9.</span> Multiple cursor in Emacs with Evil-multiedit</h2>
-<div class="outline-text-2" id="text-9">
-<ul class="org-ul">
-<li>Make selections and then edit those selections interactively</li>
-<li><code>M d</code> will select the current word, and again will find another
-occurance</li>
-<li><code>M D</code> will find the occurence upward</li>
-<li>You can use a visual selection to select multiple words.</li>
-<li><code>R</code> will select all occurances</li>
-<li><code>CTRL n</code> for next selection <code>CTRL p</code> for previous</li>
-<li>Exclude matches with <code>RET</code></li>
-<li>You can make an edit and the changes will be reflected in all the
-selection</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org3742fdd" class="outline-2">
-<h2 id="org3742fdd"><span class="section-number-2">10.</span> Org Mode</h2>
-<div class="outline-text-2" id="text-10">
-</div>
-<div id="outline-container-org93e23e9" class="outline-3">
-<h3 id="org93e23e9"><span class="section-number-3">10.1.</span> Basics</h3>
-<div class="outline-text-3" id="text-10-1">
-<ul class="org-ul">
-<li>Org mode gives you structure to your document</li>
-<li><code>*</code> for a h1 <code>**</code> for an h2 and so on</li>
-<li>You can <code>TAB</code> a section to fold a subtree (hide it)</li>
-<li>You can use <code>SHIFT TAB</code> to cycle through folded states</li>
-<li><code>CTRL return</code> to create a headline of the same type</li>
-<li><code>M arrow up</code> lets you shift the position of the section</li>
-<li><code>M h</code> promotes a headline to the next level</li>
-<li><code>M l</code> demotes</li>
-<li>You can create lists
-<ol class="org-ol">
-<li>onw</li>
-<li>2</li>
-<li>wooo</li>
-<li>3</li>
-</ol></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orgd86db83" class="outline-3">
-<h3 id="orgd86db83"><span class="section-number-3">10.2.</span> Links, Hyperlinks and more</h3>
-<div class="outline-text-3" id="text-10-2">
-<ul class="org-ul">
-<li><code>SPC m l</code> to add a link to an org page</li>
-<li>You can add <code>::</code> to specify a heading or a line number</li>
-<li>You can paste http links as well</li>
-<li>You can &ldquo;link&rdquo; some text with specific code <code>SPC m l</code> elisp: <a href="(+ 2 2)">(+ 2 2)</a> when you click the link, emacs will evaluate the expression</li>
-<li>Show <a href="org-agenda">My Agenda</a></li>
-<li><a href="ls">List Files</a> in directory</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgf2eac2b" class="outline-3">
-<h3 id="orgf2eac2b"><span class="section-number-3">10.3.</span> Defining custoom Link Types</h3>
-<div class="outline-text-3" id="text-10-3">
-<ul class="org-ul">
-<li><a href="https://youtube.com/watch?v=Febe4lUK5G4">Whatch the video about custom links</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org994f865" class="outline-3">
-<h3 id="org994f865"><span class="section-number-3">10.4.</span> Linking to words &amp; Bookmarks</h3>
-<div class="outline-text-3" id="text-10-4">
-<ul class="org-ul">
-<li><code>SPC n l</code> stores a link to a particular headline</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org5149c05" class="outline-3">
-<h3 id="org5149c05"><span class="section-number-3">10.5.</span> Code Snippets &amp; Babel</h3>
-<div class="outline-text-3" id="text-10-5">
-<ul class="org-ul">
-<li><code>SPC i s</code> for inserting code snippets
-<ul class="org-ul">
-<li><p>
-Example:
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">  <span style="color: #F92660;">(</span><span style="color: #9C91E4;">+</span> <span style="color: #9C91E4; font-weight: bold;">2</span> <span style="color: #9C91E4; font-weight: bold;">3</span> <span style="color: #9C91E4; font-weight: bold;">4</span> <span style="color: #9C91E4; font-weight: bold;">5</span><span style="color: #F92660;">)</span>
+  <div id="content" class="content">
+    <h1 class="title">The Ultimate Doom Emacs Cheatsheet</h1>
+    <div id="table-of-contents" role="doc-toc">
+      <h2>Table of Contents</h2>
+      <div id="text-table-of-contents" role="doc-toc">
+        <ul>
+          <li><a href="#org90a380e">1. A few tips for Emacs
+          newbies</a></li>
+          <li><a href="#org8a931ff">2. Command
+          Abbreviations</a></li>
+          <li><a href="#orgb248312">3. General</a></li>
+          <li><a href="#org3aa0d34">4. Projects with
+          Projectile</a></li>
+          <li><a href="#orgf512641">5. Dired</a></li>
+          <li>
+            <a href="#org15cf4eb">6. Buffers, Windows and Basic
+            Navigation</a>
+            <ul>
+              <li><a href="#orgbe96882">6.1. Buffers</a></li>
+              <li><a href="#org32dce32">6.2. Windows</a></li>
+              <li><a href="#orga292212">6.3. Workspaces</a></li>
+            </ul>
+          </li>
+          <li><a href="#orgbaac691">7. Installing Packages using
+          org-super-agenda as an example</a></li>
+          <li>
+            <a href="#org36630ab">8. Quick, horizontal movements
+            with evil-snipe</a>
+            <ul>
+              <li><a href="#orgc659b8b">8.1. Inine
+              navigation</a></li>
+              <li><a href="#org496b93e">8.2. Long distance
+              navigation inside the file</a></li>
+            </ul>
+          </li>
+          <li><a href="#org99f737c">9. Multiple cursor in Emacs
+          with Evil-multiedit</a></li>
+          <li>
+            <a href="#orgc3f29f0">10. Org Mode</a>
+            <ul>
+              <li><a href="#orga2173d3">10.1. Basics</a></li>
+              <li><a href="#org0dcd985">10.2. Links, Hyperlinks and
+              more</a></li>
+              <li><a href="#org331e516">10.3. Defining custoom Link
+              Types</a></li>
+              <li><a href="#org5f56ac2">10.4. Linking to words
+              &amp; Bookmarks</a></li>
+              <li><a href="#org6b77a03">10.5. Code Snippets &amp;
+              Babel</a></li>
+              <li>
+                <a href="#org47fd6e8">10.6. Task Management</a>
+                <ul>
+                  <li><a href="#org9581e6f">10.6.1. Priorities for
+                  Tasks</a></li>
+                  <li><a href="#org9c359c2">10.6.2. Marking Tasks
+                  with Tags</a></li>
+                  <li><a href="#org3c9af57">10.6.3. Setting a
+                  poperty for a task/headline</a></li>
+                </ul>
+              </li>
+              <li><a href="#org1905197">10.7. Lists</a></li>
+              <li>
+                <a href="#org4dcd7d1">10.8. Checkboxes</a>
+                <ul>
+                  <li><a href="#orgcfc2e35">10.8.1. You can see how
+                  many are done with a “cookie”
+                  <code>[1/2]</code></a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#org8b3ba56">11. Magit</a>
+            <ul>
+              <li><a href="#org0815d83">11.1. Git Commit Flow in
+              More Detail</a></li>
+              <li><a href="#org76f6431">11.2. Magit with Forge for
+              Issuing Pull Requests - Emacs</a></li>
+            </ul>
+          </li>
+          <li><a href="#org388dae2">12. Terminal</a></li>
+          <li><a href="#org8734325">13. File Tree</a></li>
+          <li><a href="#orgc135a56">14. Others</a></li>
+          <li><a href="#org64c2414">15. Capturing</a></li>
+          <li><a href="#org9e5a25c">16. Org Roam</a></li>
+          <li><a href="#org758171f">17. Sources</a></li>
+          <li><a href="#org0087b1f">18. What to learn
+          <code>[0/2]</code></a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="outline-container-org90a380e" class="outline-2">
+      <h2 id="org90a380e"><span class="section-number-2">1.</span>
+      A few tips for Emacs newbies</h2>
+      <div class="outline-text-2" id="text-1">
+        <ul class="org-ul">
+          <li>Use <a href=
+          "https://www.emacswiki.org/emacs/EmacsClient">emacsclient</a>
+          and set up a daemon, your Emacs experience will improve
+          <b>a lot</b> and you will save a lot of time.</li>
+          <li>For better experience, use Emacs’s inner file
+          manager.</li>
+          <li>Get <a href=
+          "https://emacs-lsp.github.io/lsp-mode/">LSP</a> up and
+          running. It will turn Emacs into a fully-featured modern
+          IDE. Emacs supports LSP for almost every language.</li>
+          <li>Try to avoid terminal version of Emacs when
+          possible.</li>
+          <li>Use Doom Emacs’s built-in helps to understand how
+          things work under the hood and change them to suit your
+          needs.
+            <ul class="org-ul">
+              <li><code>SPC h k</code> tells you how key
+              combinations translate to Emacs commands.</li>
+              <li><code>SPC h w</code> helps you find keyboard
+              shortcuts for different commands.</li>
+              <li><code>SPC h v</code> lets you see what’s inside
+              variables and change them.</li>
+              <li><code>SPC h f</code> tells you about functions
+              and where they are defined.</li>
+            </ul>
+          </li>
+          <li>Github doesn’t render org files very well. It’s best
+          that you <a href=
+          "https://raw.githubusercontent.com/niyumard/Doom-Emacs-Cheat-Sheet/main/README.org">
+          download this file</a> and open it in Emacs. If not
+          possible, use the <a href=
+          "https://naghdbishi.ir/Doom-Emacs-Cheat-Sheet/README.html">
+          html version</a> made with <a href=
+          "https://github.com/fniessen/org-html-themes">org-html-themes</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="outline-container-org8a931ff" class="outline-2">
+      <h2 id="org8a931ff"><span class="section-number-2">2.</span>
+      Command Abbreviations</h2>
+      <div class="outline-text-2" id="text-2">
+        <ul class="org-ul">
+          <li><code>C</code> - “Control” key</li>
+          <li><code>M</code> - “Alt” or “Option” key</li>
+          <li><code>S</code> - “Super” or “Command” key</li>
+          <li><code>SPC</code> - “Space” key</li>
+        </ul>
+      </div>
+    </div>
+    <div id="outline-container-orgb248312" class="outline-2">
+      <h2 id="orgb248312"><span class="section-number-2">3.</span>
+      General</h2>
+      <div class="outline-text-2" id="text-3">
+        <ul class="org-ul">
+          <li><code>SPC f s</code> for saving the current file</li>
+          <li><code>SPC :</code> for entering a command</li>
+          <li><code>SPC q q</code> to close Emacs</li>
+          <li><code>SPC f D</code> to delete this file</li>
+        </ul>
+      </div>
+    </div>
+    <div id="outline-container-org3aa0d34" class="outline-2">
+      <h2 id="org3aa0d34"><span class="section-number-2">4.</span>
+      Projects with Projectile</h2>
+      <div class="outline-text-2" id="text-4">
+        <ul class="org-ul">
+          <li><code>SPC p p</code> to open a project</li>
+          <li><code>SPC SPC</code> to open a file in a project</li>
+          <li><code>SPC o p</code> to open the file explorer</li>
+          <li><code>SPC o E</code> to open the shell (eshell) in
+          fullscreen</li>
+          <li><code>SPC o e</code> to open the shell (eshell) in a
+          popup window</li>
+          <li><code>SPC f r</code> recently visited files</li>
+          <li><code>SPC f R</code> recently visited files in a
+          project</li>
+          <li><code>M-x
+          projectile-discover-projects-in-directory</code> to find
+          projects within given folder using Projectile</li>
+          <li><code>M-x
+          projectile-discover-projects-in-search-path</code> to
+          find projects in the folder defined by the
+          <code>projectile-project-search-path</code> variable
+          using Projectile</li>
+        </ul>
+      </div>
+    </div>
+    <div id="outline-container-orgf512641" class="outline-2">
+      <h2 id="orgf512641"><span class="section-number-2">5.</span>
+      Dired</h2>
+      <div class="outline-text-2" id="text-5">
+        <ul class="org-ul">
+          <li>Dired (Directory Editor) is how you interfaces with a
+          directory</li>
+          <li>Press <code>C-x d</code> to open dired.</li>
+          <li>Use <code>RET</code> to go to a folder or open a
+          file.</li>
+          <li>Use <code>-</code> for going one folder back</li>
+          <li>Use <code>+</code> for creating a new directory</li>
+          <li>Use <code>d</code> to mark the files for deletion,
+          press <code>x</code> to delete.</li>
+          <li>Use <code>M</code> to change permissions</li>
+          <li>Use <code>o</code> to sort by modes.</li>
+          <li>Use <code>O</code> to change the owner.</li>
+          <li>Use <code>m</code> to mark and <code>u</code> to
+          unmark files or directories.</li>
+          <li><code>U</code> to unselect all</li>
+          <li>Use <code>t</code> to invert the selection.</li>
+          <li><code>t</code> to switch between files and
+          directories</li>
+          <li>Use <code>C</code> to copy.</li>
+          <li>Use <code>R</code> to move.</li>
+          <li>Move with <code>h</code>, <code>j</code>,
+          <code>k</code>, <code>l</code></li>
+          <li>Toggle <code>(</code> for simple view</li>
+          <li><code>SPC .</code> to create or find a file</li>
+          <li><code>*</code> to select all directories.</li>
+          <li><code>C</code> copy to another window</li>
+          <li><code>R</code> move to another window</li>
+          <li><code>dired-do-what-i-mean-target</code> set to
+          true</li>
+          <li><code>i</code> to edit file/dir name</li>
+        </ul>
+      </div>
+    </div>
+    <div id="outline-container-org15cf4eb" class="outline-2">
+      <h2 id="org15cf4eb"><span class="section-number-2">6.</span>
+      Buffers, Windows and Basic Navigation</h2>
+      <div class="outline-text-2" id="text-6"></div>
+      <div id="outline-container-orgbe96882" class="outline-3">
+        <h3 id="orgbe96882"><span class=
+        "section-number-3">6.1.</span> Buffers</h3>
+        <div class="outline-text-3" id="text-6-1">
+          <ul class="org-ul">
+            <li>Buffers are a special concept in emacs they can be
+            terminals, files, directories, etc</li>
+            <li>
+              <code>SPC b b</code> to open another buffer
+              <ul class="org-ul">
+                <li>workspace buffer</li>
+              </ul>
+            </li>
+            <li><code>SPC b B</code> you can see all the
+            buffer</li>
+            <li><code>SPC ,</code> to switch buffers (its an
+            alias)</li>
+            <li><code>SPC SHIFT ,</code> to switch to all
+            buffers</li>
+            <li><code>SPC b X</code> You can create a scratch
+            buffer</li>
+            <li><code>SPC b s</code> to save and name it</li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-org32dce32" class="outline-3">
+        <h3 id="org32dce32"><span class=
+        "section-number-3">6.2.</span> Windows</h3>
+        <div class="outline-text-3" id="text-6-2">
+          <ul class="org-ul">
+            <li><code>SPC w v</code> window split vertically</li>
+            <li><code>SPC w s</code> window split horizonal</li>
+            <li><code>SPC w w</code> to switch windows</li>
+            <li><code>SPC w q</code> to close window, frame, quit
+            EMACS if last frame</li>
+            <li><code>SPC w +</code> and <code>SPC w -</code> to
+            increase and decrease window height</li>
+            <li><code>SPC w &gt;</code> and <code>SPC w &lt;</code>
+            to increase and decrease window width</li>
+            <li>You can use vim motion keys to navigate between
+            open windows for example <code>SPC w H</code> moves the
+            window to the left.</li>
+            <li>Windows are panes in your screen</li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-orga292212" class="outline-3">
+        <h3 id="orga292212"><span class=
+        "section-number-3">6.3.</span> Workspaces</h3>
+        <div class="outline-text-3" id="text-6-3">
+          <ul class="org-ul">
+            <li><code>SPC TAB n</code> New workspace</li>
+            <li><code>SPC TAB N</code> Newly named workspace</li>
+            <li><code>SPC TAB [</code> Previous workspace</li>
+            <li><code>SPC TAB ]</code> Next workspace</li>
+            <li><code>SPC TAB d</code> Remove workspace</li>
+            <li><code>SPC TAB R</code> Restore last session</li>
+            <li><code>M-1</code> Switch to workspace 1</li>
+            <li><code>M-2</code> Switch to workspace 2 and so
+            forth.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="outline-container-orgbaac691" class="outline-2">
+      <h2 id="orgbaac691"><span class="section-number-2">7.</span>
+      Installing Packages using org-super-agenda as an example</h2>
+      <div class="outline-text-2" id="text-7">
+        <ul class="org-ul">
+          <li><code>SPC f p</code> to open the config.</li>
+          <li>To add a package, add the package to
+          <code>.doom.d/package.el</code></li>
+          <li>Then close and <code>doom refresh</code></li>
+          <li>Then go to <code>.doom.d/config.el</code> to
+          configure the package</li>
+          <li>
+            <code>def-package!</code> is a macro you can use to
+            configure packages
+            <ul class="org-ul">
+              <li><code>space h help</code> you can look up method
+              man pages</li>
+              <li><code>:init</code> is used for setting the
+              package up</li>
+              <li><code>:config</code> to set configuration after
+              the package has been initialized</li>
+              <li><code>:after</code> lets you set which package it
+              should load after</li>
+            </ul>
+          </li>
+          <li>You can use <code>:after!</code> to configure
+          packages that are already there</li>
+        </ul>
+      </div>
+    </div>
+    <div id="outline-container-org36630ab" class="outline-2">
+      <h2 id="org36630ab"><span class="section-number-2">8.</span>
+      Quick, horizontal movements with evil-snipe</h2>
+      <div class="outline-text-2" id="text-8"></div>
+      <div id="outline-container-orgc659b8b" class="outline-3">
+        <h3 id="orgc659b8b"><span class=
+        "section-number-3">8.1.</span> Inine navigation</h3>
+        <div class="outline-text-3" id="text-8-1">
+          <ul class="org-ul">
+            <li>
+              <code>f</code> and then the letter you want to
+              navigate to.
+              <ul class="org-ul">
+                <li><code>,</code> will go backward</li>
+                <li><code>;</code> will go forward after that
+                “find”</li>
+              </ul>
+            </li>
+            <li><code>t</code> to find and move cursor to the
+            charachter before what you’ve searched.</li>
+            <li><code>v</code> puts you in visual mode. You can
+            select text by with <code>v t
+            some-char-you-navigate-to</code> or <code>v f
+            some-char-you-navigate-to</code></li>
+            <li><code>;</code> to jump to the next find</li>
+            <li><code>,</code> to jump to the previous one</li>
+            <li><code>s</code> to snipe</li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-org496b93e" class="outline-3">
+        <h3 id="org496b93e"><span class=
+        "section-number-3">8.2.</span> Long distance navigation
+        inside the file</h3>
+        <div class="outline-text-3" id="text-8-2">
+          <ul class="org-ul">
+            <li>Evil-snipe lets you go to all the occurrences in
+            your document</li>
+            <li><code>g s SPC</code> to use avy and going to a
+            certain word in file.</li>
+            <li><code>t</code> is the same thing except for a
+            character you want to jump to before the one you
+            insert</li>
+            <li><code>s</code> to do a double character search</li>
+            <li>Evil-snipe will remember your last search so
+            <code>,</code> and <code>;</code> will navigate</li>
+            <li><code>F</code> or <code>T</code> to go
+            backwards</li>
+            <li>
+              <code>g s SPC</code> and then select the letter that
+              avy gives you to navigate to that spot
+              <ul class="org-ul">
+                <li>These letters are on your home row so they are
+                easy to click</li>
+              </ul>
+            </li>
+            <li>
+              <code>SPC h v</code> for variable, to set the avy
+              variable to search all open windows
+              <ul class="org-ul">
+                <li><code>avy-all-windows</code> lets you search in
+                all windows open.</li>
+              </ul>
+            </li>
+            <li>You can remove a word with <code>g s SPC
+            select-one-letter x select-the-removal-spot</code>
+              <ul class="org-ul">
+                <li>You can use <code>X</code> to stay in your
+                original spot of search</li>
+              </ul>
+            </li>
+            <li>You can go <code>g s space select-one-letter i
+            select-the-correction-spot</code> to correct the
+            spelling of the search
+              <ul class="org-ul">
+                <li>Install ispell on your OS first</li>
+              </ul>
+            </li>
+            <li>You can <code>yank</code> a word from one place to
+            another with <code>g s SPC select-one-letter y
+            select-the-correction-spot-to-paste</code></li>
+            <li>Use <code>t</code> to “teleport” the word from one
+            place to another <code>g s SPC select-one-letter t
+            select-the-correction-spot-to-teleport</code></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="outline-container-org99f737c" class="outline-2">
+      <h2 id="org99f737c"><span class="section-number-2">9.</span>
+      Multiple cursor in Emacs with Evil-multiedit</h2>
+      <div class="outline-text-2" id="text-9">
+        <ul class="org-ul">
+          <li>Make selections and then edit those selections
+          interactively</li>
+          <li><code>M-d</code> will select the current word, and
+          again will find another occurrence</li>
+          <li><code>M-D</code> will find the occurrence upward</li>
+          <li>You can use a visual selection to select multiple
+          words.</li>
+          <li><code>R</code> will select all occurrences</li>
+          <li><code>CTRL n</code> for next selection <code>CTRL
+          p</code> for previous</li>
+          <li>Exclude matches with <code>RET</code></li>
+          <li>You can make an edit and the changes will be
+          reflected in all the selection</li>
+        </ul>
+      </div>
+    </div>
+    <div id="outline-container-orgc3f29f0" class="outline-2">
+      <h2 id="orgc3f29f0"><span class="section-number-2">10.</span>
+      Org Mode</h2>
+      <div class="outline-text-2" id="text-10"></div>
+      <div id="outline-container-orga2173d3" class="outline-3">
+        <h3 id="orga2173d3"><span class=
+        "section-number-3">10.1.</span> Basics</h3>
+        <div class="outline-text-3" id="text-10-1">
+          <ul class="org-ul">
+            <li>Org mode gives you structure to your document</li>
+            <li><code>*</code> for a h1 <code>**</code> for an h2
+            and so on</li>
+            <li>You can <code>TAB</code> a section to fold a
+            subtree (hide it)</li>
+            <li>You can use <code>SHIFT TAB</code> to cycle through
+            folded states</li>
+            <li><code>CTRL return</code> to create a headline of
+            the same type</li>
+            <li><code>M-arrow up</code> lets you shift the position
+            of the section</li>
+            <li><code>M-h</code> promotes a headline to the next
+            level</li>
+            <li><code>M-l</code> demotes</li>
+            <li>You can create lists
+              <ol class="org-ol">
+                <li>onw</li>
+                <li>2</li>
+                <li>wooo</li>
+                <li>3</li>
+              </ol>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-org0dcd985" class="outline-3">
+        <h3 id="org0dcd985"><span class=
+        "section-number-3">10.2.</span> Links, Hyperlinks and
+        more</h3>
+        <div class="outline-text-3" id="text-10-2">
+          <ul class="org-ul">
+            <li><code>SPC m l</code> to add a link to an org
+            page</li>
+            <li>You can add <code>::</code> to specify a heading or
+            a line number</li>
+            <li>You can paste http links as well</li>
+            <li>You can “link” some text with specific code
+            <code>SPC m l</code> elisp: <a href="(+%202%202)">(+ 2
+            2)</a> when you click the link, emacs will evaluate the
+            expression</li>
+            <li>Show <a href="org-agenda">My Agenda</a></li>
+            <li><a href="ls">List Files</a> in directory</li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-org331e516" class="outline-3">
+        <h3 id="org331e516"><span class=
+        "section-number-3">10.3.</span> Defining custoom Link
+        Types</h3>
+        <div class="outline-text-3" id="text-10-3">
+          <ul class="org-ul">
+            <li><a href=
+            "https://youtube.com/watch?v=Febe4lUK5G4">Watch the
+            video about custom links</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-org5f56ac2" class="outline-3">
+        <h3 id="org5f56ac2"><span class=
+        "section-number-3">10.4.</span> Linking to words &amp;
+        Bookmarks</h3>
+        <div class="outline-text-3" id="text-10-4">
+          <ul class="org-ul">
+            <li><code>SPC n l</code> stores a link to a particular
+            headline</li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-org6b77a03" class="outline-3">
+        <h3 id="org6b77a03"><span class=
+        "section-number-3">10.5.</span> Code Snippets &amp;
+        Babel</h3>
+        <div class="outline-text-3" id="text-10-5">
+          <ul class="org-ul">
+            <li>
+              <code>SPC i s</code> for inserting code snippets
+              <ul class="org-ul">
+                <li>
+                  <p>Example:</p>
+                  <div class="org-src-container">
+                    <pre class="src src-emacs-lisp">  <span style=
+                    "color: #F92660;">(</span><span style=
+                    "color: #9C91E4;">+</span> <span style=
+                    "color: #9C91E4; font-weight: bold;">2</span> <span style=
+                    "color: #9C91E4; font-weight: bold;">3</span> <span style=
+                    "color: #9C91E4; font-weight: bold;">4</span> <span style=
+                    "color: #9C91E4; font-weight: bold;">5</span><span style=
+                    "color: #F92660;">)</span>
 </pre>
-</div></li>
-</ul></li>
-<li><code>C-c C-c</code> to execute the code.</li>
-<li><code>SPC m '</code> to edit inside the babel in another buffer.</li>
-<li>Results will show up in a <code>##+RESULTS</code> header</li>
-<li>This feature is called Babel</li>
-<li>One snippet can consume the output of another snippet</li>
-<li>You can create your own snippets in the following directory: <code>~/.doom.d/snippets/</code></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org0527eeb" class="outline-3">
-<h3 id="org0527eeb"><span class="section-number-3">10.6.</span> Task Management</h3>
-<div class="outline-text-3" id="text-10-6">
-<ul class="org-ul">
-<li>Create a task by prefixing any heading with <code>TODO</code></li>
-<li><code>DONE</code> means the task is done</li>
-<li>You can create your custom key words by changing this variable: <code>org-todo-keywords</code>
-<ul class="org-ul">
-<li>remember you can get to your variables through <code>SPC h v</code> (M-x counsel-describe-variable)</li>
-<li><p>
-These values are already set in Doom:
-</p>
-<pre class="example" id="org7acc537">
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li><code>C-c C-c</code> to execute the code.</li>
+            <li><code>SPC m '</code> to edit inside the babel in
+            another buffer.</li>
+            <li>Results will show up in a <code>##+RESULTS</code>
+            header</li>
+            <li>This feature is called Babel</li>
+            <li>One snippet can consume the output of another
+            snippet</li>
+            <li>You can create your own snippets in the following
+            directory: <code>~/.doom.d/snippets/</code></li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-org47fd6e8" class="outline-3">
+        <h3 id="org47fd6e8"><span class=
+        "section-number-3">10.6.</span> Task Management</h3>
+        <div class="outline-text-3" id="text-10-6">
+          <ul class="org-ul">
+            <li>Create a task by prefixing any heading with
+            <code>TODO</code></li>
+            <li><code>DONE</code> means the task is done</li>
+            <li>You can create your custom key words by changing
+            this variable: <code>org-todo-keywords</code>
+              <ul class="org-ul">
+                <li>remember you can get to your variables through
+                <code>SPC h v</code> (M-x
+                counsel-describe-variable)</li>
+                <li>
+                  <p>These values are already set in Doom:</p>
+                  <pre class="example" id="org8160a10">
            ((sequence "TODO(t)" "PROJ(p)" "STRT(s)" "WAIT(w)" "HOLD(h)" "|" "DONE(d)" "KILL(k)")
         (sequence "[ ](T)" "[-](S)" "[?](W)" "|" "[X](D)"))
-</pre></li>
-</ul></li>
-<li><code>SPC m t</code> to change a status of a todo</li>
-<li><code>SHIFT left</code> and <code>SHIFT right</code> can be used to change the status of a todo as well.</li>
-<li>If you finish a task with a command, org mode will add a date that you &ldquo;closed&rdquo; the task.</li>
-<li><code>SPC o a t</code> to open the agenda -&gt; todo list</li>
-<li><code>q</code> to quit</li>
-<li><code>org-agenda-files</code> is a variable you can set to filter which files agenda searches for todos in.</li>
-</ul>
-</div>
-
-<div id="outline-container-orgd401f1b" class="outline-4">
-<h4 id="orgd401f1b"><span class="section-number-4">10.6.1.</span> Priorities for Tasks</h4>
-<div class="outline-text-4" id="text-10-6-1">
-<ul class="org-ul">
-<li><code>SHIFT up</code> and <code>SHIFT down</code> will toggle the priority of tasks</li>
-<li><code>org-fancy-priorities</code> gives you fancy looking priorities</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orgc9e3975" class="outline-4">
-<h4 id="orgc9e3975"><span class="section-number-4">10.6.2.</span> Marking Tasks with Tags</h4>
-<div class="outline-text-4" id="text-10-6-2">
-<ul class="org-ul">
-<li>Tags can be attached to any headlines</li>
-<li><code>SPC m q</code> to tag a headline</li>
-<li>Example:
-<ul class="org-ul">
-<li>TODO play more games :fun:</li>
-</ul></li>
-<li>Tags are hierarchical so nested headings will be tagged with the
-parent header tag</li>
-<li><code>org-tag-sparce-tree</code> will search for headings that only have a specific
-tag</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org8616956" class="outline-4">
-<h4 id="org8616956"><span class="section-number-4">10.6.3.</span> Setting a poperty for a task/headline</h4>
-<div class="outline-text-4" id="text-10-6-3">
-<ul class="org-ul">
-<li><code>SPC m o</code> is used for setting a property.</li>
-</ul>
-</div>
-<ol class="org-ol">
-<li><a id="orgeb4b967"></a>Marking Headlines with Categories<br />
-<div class="outline-text-5" id="text-10-6-3-1">
-<ul class="org-ul">
-<li>You can use <a href="https://orgmode.org/manual/Categories.html">categories</a> to change the label in agenda view.</li>
-</ul>
-</div>
-</li>
-<li><a id="orga3611b1"></a>Org-Habits<br />
-<div class="outline-text-5" id="text-10-6-3-2">
-<ul class="org-ul">
-<li>If you want to <a href="https://orgmode.org/manual/Tracking-your-habits.html">keep track of your habits</a> using org mode, you can set the <code>STYLE</code> property to habit.
-
-<ul class="org-ul">
-<li>If you want to set a category (for chani</li>
-</ul></li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div id="outline-container-org4422b97" class="outline-3">
-<h3 id="org4422b97"><span class="section-number-3">10.7.</span> Lists</h3>
-<div class="outline-text-3" id="text-10-7">
-<ul class="org-ul">
-<li>Two types of lists, ordered and unordered lists
-<ul class="org-ul">
-<li><code>SHIFT right</code> and <code>SHIFT left</code> can be used to change the type of lists.</li>
-</ul></li>
-<li>You can also change an unorded list by changing the first item to 1. and then typing <code>C-c C-c</code> and vice verca.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org07f3b12" class="outline-3">
-<h3 id="org07f3b12"><span class="section-number-3">10.8.</span> Checkboxes</h3>
-<div class="outline-text-3" id="text-10-8">
-<ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> This is still todo</li>
-<li class="trans"><code>[-]</code> This is in progress</li>
-<li class="on"><code>[X]</code> This is a done task</li>
-</ul>
-</div>
-<div id="outline-container-org65378d5" class="outline-4">
-<h4 id="org65378d5"><span class="section-number-4">10.8.1.</span> You can see how many are done with a &ldquo;cookie&rdquo; <code>[1/2]</code></h4>
-<div class="outline-text-4" id="text-10-8-1">
-<ul class="org-ul">
-<li class="trans"><code>[-]</code> Task 1</li>
-<li class="on"><code>[X]</code> Task 2</li>
-<li>You can do this by adding <code>[/]</code> to the heading and pressing <code>C-c C-c</code></li>
-<li>You can&rsquo;t assign a tag or a priority</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orga4062cb" class="outline-2">
-<h2 id="orga4062cb"><span class="section-number-2">11.</span> Magit</h2>
-<div class="outline-text-2" id="text-11">
-<ul class="org-ul">
-<li>magit is configured for you</li>
-<li><code>SPC g g</code> to show Magit status Page</li>
-<li>most commands are done from the status page</li>
-<li>press <code>?</code> to see what you can do</li>
-<li><code>git add -p</code> lets you stage in hunks</li>
-<li>Open and close with the <code>TAB</code></li>
-<li>Open diff view for a file with <code>TAB</code></li>
-<li><code>s</code> to stage a change</li>
-<li><code>u</code> to undo a change</li>
-<li><code>c</code> to commit</li>
-<li><code>b s</code> for branch and spinoff to create another branch, rewinding the
-commits you made to master</li>
-<li><code>b b</code> to switch branches</li>
-</ul>
-</div>
-
-<div id="outline-container-org6233002" class="outline-3">
-<h3 id="org6233002"><span class="section-number-3">11.1.</span> Git Commit Flow in More Detail</h3>
-<div class="outline-text-3" id="text-11-1">
-<ul class="org-ul">
-<li><code>t t</code> to create a tag, default place is the commit you are currently
-selecting</li>
-<li><code>V</code> to select a change in a diff and <code>x</code> to discard that change.</li>
-<li><code>s</code> to stage</li>
-<li><code>c</code> to commit, you can <code>q</code> to quit the commit screen</li>
-<li><code>P</code> to push and then <code>p</code> to your remote or <code>u</code> to a another remote</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org7f8a9d2" class="outline-3">
-<h3 id="org7f8a9d2"><span class="section-number-3">11.2.</span> Magit with Forge for Issuing Pull Requests - Emacs</h3>
-<div class="outline-text-3" id="text-11-2">
-<ul class="org-ul">
-<li>Forge is installed in emacs doom</li>
-<li><code>@</code> for forge</li>
-<li>Set up forge with <code>M x forge-pull</code>
-<ul class="org-ul">
-<li>the first time you will get a token from github</li>
-</ul></li>
-<li><code>@ c p</code> to create a pull request with forge
-<ul class="org-ul">
-<li>select the base branch</li>
-<li>then select the target branch</li>
-<li>then provide a short description</li>
-<li><code>CTRL c CTRL c</code> to finish the pull request</li>
-</ul></li>
-<li>Now there will be a <code>pull requests</code> tab</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org8760360" class="outline-2">
-<h2 id="org8760360"><span class="section-number-2">12.</span> Terminal</h2>
-<div class="outline-text-2" id="text-12">
-<ul class="org-ul">
-<li>Set up vterm in your init.el file.</li>
-<li><code>SPC o T</code> for opening vterm</li>
-<li><code>SPC o t</code> for opening vterm in a popup window</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org1e70de6" class="outline-2">
-<h2 id="org1e70de6"><span class="section-number-2">13.</span> File Tree</h2>
-<div class="outline-text-2" id="text-13">
-<ul class="org-ul">
-<li>Set up neotree or treemacs in your init.el file.</li>
-<li><code>SPC o p</code> for opening neotree or treemacs</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org3fae2c4" class="outline-2">
-<h2 id="org3fae2c4"><span class="section-number-2">14.</span> Others</h2>
-<div class="outline-text-2" id="text-14">
-<ul class="org-ul">
-<li><code>C-c C-z</code> to insert a note for a heading in org mode.</li>
-</ul>
-<ul class="org-ul">
-<li><code>C-c C-c</code> to insert a tag for a heading in org mode.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgf7f34e7" class="outline-2">
-<h2 id="orgf7f34e7"><span class="section-number-2">15.</span> Capturing</h2>
-<div class="outline-text-2" id="text-15">
-<ul class="org-ul">
-<li><code>SPC X</code> to capture (the new thing gets caputured to a single file but that&rsquo;s fine since we can easily refile it.)</li>
-<li><code>SPC m r r</code> to refile</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org6b8c4b9" class="outline-2">
-<h2 id="org6b8c4b9"><span class="section-number-2">16.</span> Org Roam</h2>
-<div class="outline-text-2" id="text-16">
-<p>
-These keybinding only work after installing org-roam. To install org roam edit your <code>init.el</code> file and add <code>(org +roam2)</code> in its designated place. Watch <a href="https://www.youtube.com/watch?v=AyhPmypHDEw">this video</a> to understand what org-roam is.
-</p>
-
-<ul class="org-ul">
-<li><code>SPC n r f</code> Find an existing node or create a new one.</li>
-<li><code>SPC n r i</code> Insert a link to another node.</li>
-<li><code>SPC n r r</code> Toggle backlinks pane</li>
-<li><code>SPC m m o t</code> Add a roam tag.</li>
-<li><code>SPC m m o a</code> Add a roam alias.</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org1e52724" class="outline-2">
-<h2 id="org1e52724"><span class="section-number-2">17.</span> Sources</h2>
-<div class="outline-text-2" id="text-17">
-<ul class="org-ul">
-<li><a href="https://www.youtube.com/watch?v=BRqjaN4-gGQ&amp;list=PLhXZp00uXBk4np17N39WvB80zgxlZfVwj&amp;index=10">Link to youtube video series</a></li>
-<li><a href="https://www.ianjones.us/zaiste-programming-doom-emacs-tutorial/#org7ad2452">This org file is mostly from the notes taken from the series above by ianjones.us</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orga354843" class="outline-2">
-<h2 id="orga354843"><span class="section-number-2">18.</span> What to learn <code>[0/4]</code></h2>
-<div class="outline-text-2" id="text-18">
-<ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> Org-journal</li>
-<li class="off"><code>[&#xa0;]</code> <a href="https://orgroam.com">Org Roam</a></li>
-<li class="off"><code>[&#xa0;]</code> abbrev-mode</li>
-<li class="off"><code>[&#xa0;]</code> Org-super-agenda</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="postamble" class="status">
-<p class="author">Author: Hossein Naghdbishi</p>
-<p class="date">Created: 2021-11-17 Wed 00:14</p>
-</div>
+</pre>
+                </li>
+              </ul>
+            </li>
+            <li><code>SPC m t</code> to change a status of a
+            todo</li>
+            <li><code>SHIFT left</code> and <code>SHIFT
+            right</code> can be used to change the status of a todo
+            as well.</li>
+            <li>If you finish a task with a command, org mode will
+            add a date that you “closed” the task.</li>
+            <li><code>SPC o a t</code> to open the agenda -&gt;
+            todo list</li>
+            <li><code>q</code> to quit</li>
+            <li><code>org-agenda-files</code> is a variable you can
+            set to filter which files agenda searches for todos
+            in.</li>
+          </ul>
+        </div>
+        <div id="outline-container-org9581e6f" class="outline-4">
+          <h4 id="org9581e6f"><span class=
+          "section-number-4">10.6.1.</span> Priorities for
+          Tasks</h4>
+          <div class="outline-text-4" id="text-10-6-1">
+            <ul class="org-ul">
+              <li><code>SHIFT up</code> and <code>SHIFT down</code>
+              will toggle the priority of tasks</li>
+              <li><code>org-fancy-priorities</code> gives you fancy
+              looking priorities</li>
+            </ul>
+          </div>
+        </div>
+        <div id="outline-container-org9c359c2" class="outline-4">
+          <h4 id="org9c359c2"><span class=
+          "section-number-4">10.6.2.</span> Marking Tasks with
+          Tags</h4>
+          <div class="outline-text-4" id="text-10-6-2">
+            <ul class="org-ul">
+              <li>Tags can be attached to any headlines</li>
+              <li><code>SPC m q</code> to tag a headline</li>
+              <li>Example:
+                <ul class="org-ul">
+                  <li>TODO play more games :fun:</li>
+                </ul>
+              </li>
+              <li>Tags are hierarchical so nested headings will be
+              tagged with the parent header tag</li>
+              <li><code>org-tag-sparce-tree</code> will search for
+              headings that only have a specific tag</li>
+            </ul>
+          </div>
+        </div>
+        <div id="outline-container-org3c9af57" class="outline-4">
+          <h4 id="org3c9af57"><span class=
+          "section-number-4">10.6.3.</span> Setting a poperty for a
+          task/headline</h4>
+          <div class="outline-text-4" id="text-10-6-3">
+            <ul class="org-ul">
+              <li><code>SPC m o</code> is used for setting a
+              property.</li>
+            </ul>
+          </div>
+          <ol class="org-ol">
+            <li>
+              <a id="org4fce808"></a>Marking Headlines with
+              Categories<br />
+              <div class="outline-text-5" id="text-10-6-3-1">
+                <ul class="org-ul">
+                  <li>You can use <a href=
+                  "https://orgmode.org/manual/Categories.html">categories</a>
+                  to change the label in agenda view.</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a id="org4761fb7"></a>Org-Habits<br />
+              <div class="outline-text-5" id="text-10-6-3-2">
+                <ul class="org-ul">
+                  <li>If you want to <a href=
+                  "https://orgmode.org/manual/Tracking-your-habits.html">
+                    keep track of your habits</a> using org mode,
+                    you can set the <code>STYLE</code> property to
+                    habit.
+                    <ul class="org-ul">
+                      <li>If you want to set a category (for
+                      chani</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div id="outline-container-org1905197" class="outline-3">
+        <h3 id="org1905197"><span class=
+        "section-number-3">10.7.</span> Lists</h3>
+        <div class="outline-text-3" id="text-10-7">
+          <ul class="org-ul">
+            <li>Two types of lists, ordered and unordered lists
+              <ul class="org-ul">
+                <li><code>SHIFT right</code> and <code>SHIFT
+                left</code> can be used to change the type of
+                lists.</li>
+              </ul>
+            </li>
+            <li>You can also change an unorded list by changing the
+            first item to 1. and then typing <code>C-c C-c</code>
+            and vice verca.</li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-org4dcd7d1" class="outline-3">
+        <h3 id="org4dcd7d1"><span class=
+        "section-number-3">10.8.</span> Checkboxes</h3>
+        <div class="outline-text-3" id="text-10-8">
+          <ul class="org-ul">
+            <li class="off"><code>[&nbsp;]</code> This is still
+            todo</li>
+            <li class="trans"><code>[-]</code> This is in
+            progress</li>
+            <li class="on"><code>[X]</code> This is a done
+            task</li>
+          </ul>
+        </div>
+        <div id="outline-container-orgcfc2e35" class="outline-4">
+          <h4 id="orgcfc2e35"><span class=
+          "section-number-4">10.8.1.</span> You can see how many
+          are done with a “cookie” <code>[1/2]</code></h4>
+          <div class="outline-text-4" id="text-10-8-1">
+            <ul class="org-ul">
+              <li class="trans"><code>[-]</code> Task 1</li>
+              <li class="on"><code>[X]</code> Task 2</li>
+              <li>You can do this by adding <code>[/]</code> to the
+              heading and pressing <code>C-c C-c</code></li>
+              <li>You can’t assign a tag or a priority</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="outline-container-org8b3ba56" class="outline-2">
+      <h2 id="org8b3ba56"><span class="section-number-2">11.</span>
+      Magit</h2>
+      <div class="outline-text-2" id="text-11">
+        <ul class="org-ul">
+          <li>Magit is enabled by default in Doom Emacs’s
+          init.el</li>
+          <li>
+            <code>SPC g g</code> shows Magit status page
+            <ul class="org-ul">
+              <li>Most commands are done from the status page</li>
+              <li>Use tab to expand headlines in the status
+              page</li>
+            </ul>
+          </li>
+          <li><code>?</code> in Magit’s status page for a nice list
+          of available commands and help, <code>q</code> to close
+          this help page</li>
+          <li>Open diff view for a file with <code>TAB</code></li>
+          <li>Press <code>s</code> under “Unstaged changes” to
+          stage a change
+            <ul class="org-ul">
+              <li><code>u</code> to undo a change</li>
+              <li><code>c</code> to commit</li>
+            </ul>
+          </li>
+          <li><code>b s</code> for branch and spinoff to create
+          another branch, rewinding the commits you made to
+          master</li>
+          <li><code>b b</code> to switch branches</li>
+        </ul>
+      </div>
+      <div id="outline-container-org0815d83" class="outline-3">
+        <h3 id="org0815d83"><span class=
+        "section-number-3">11.1.</span> Git Commit Flow in More
+        Detail</h3>
+        <div class="outline-text-3" id="text-11-1">
+          <ul class="org-ul">
+            <li><code>t t</code> to create a tag, default place is
+            the commit you are currently selecting</li>
+            <li><code>V</code> to select a change in a diff and
+            <code>x</code> to discard that change.</li>
+            <li><code>s</code> to stage</li>
+            <li><code>c</code> to commit, you can <code>q</code> to
+            quit the commit screen</li>
+            <li><code>P</code> to push and then <code>p</code> to
+            your remote or <code>u</code> to a another remote</li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-org76f6431" class="outline-3">
+        <h3 id="org76f6431"><span class=
+        "section-number-3">11.2.</span> Magit with Forge for
+        Issuing Pull Requests - Emacs</h3>
+        <div class="outline-text-3" id="text-11-2">
+          <ul class="org-ul">
+            <li>Forge is installed in emacs doom</li>
+            <li><code>@</code> for forge</li>
+            <li>Set up forge with <code>M x forge-pull</code>
+              <ul class="org-ul">
+                <li>the first time you will get a token from
+                github</li>
+              </ul>
+            </li>
+            <li>
+              <code>@ c p</code> to create a pull request with
+              forge
+              <ul class="org-ul">
+                <li>select the base branch</li>
+                <li>then select the target branch</li>
+                <li>then provide a short description</li>
+                <li><code>CTRL c CTRL c</code> to finish the pull
+                request</li>
+              </ul>
+            </li>
+            <li>Now there will be a <code>pull requests</code>
+            tab</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="outline-container-org388dae2" class="outline-2">
+      <h2 id="org388dae2"><span class="section-number-2">12.</span>
+      Terminal</h2>
+      <div class="outline-text-2" id="text-12">
+        <ul class="org-ul">
+          <li>Set up vterm in your init.el file.</li>
+          <li><code>SPC o T</code> for opening vterm</li>
+          <li><code>SPC o t</code> for opening vterm in a popup
+          window</li>
+        </ul>
+      </div>
+    </div>
+    <div id="outline-container-org8734325" class="outline-2">
+      <h2 id="org8734325"><span class="section-number-2">13.</span>
+      File Tree</h2>
+      <div class="outline-text-2" id="text-13">
+        <ul class="org-ul">
+          <li>Set up neotree or treemacs in your init.el file.</li>
+          <li><code>SPC o p</code> for opening neotree or
+          treemacs</li>
+        </ul>
+      </div>
+    </div>
+    <div id="outline-container-orgc135a56" class="outline-2">
+      <h2 id="orgc135a56"><span class="section-number-2">14.</span>
+      Others</h2>
+      <div class="outline-text-2" id="text-14">
+        <ul class="org-ul">
+          <li><code>C-c C-z</code> to insert a note for a heading
+          in org mode.</li>
+        </ul>
+        <ul class="org-ul">
+          <li><code>C-c C-c</code> to insert a tag for a heading in
+          org mode.</li>
+        </ul>
+      </div>
+    </div>
+    <div id="outline-container-org64c2414" class="outline-2">
+      <h2 id="org64c2414"><span class="section-number-2">15.</span>
+      Capturing</h2>
+      <div class="outline-text-2" id="text-15">
+        <ul class="org-ul">
+          <li><code>SPC X</code> to capture (the new thing gets
+          caputured to a single file but that’s fine since we can
+          easily refile it.)</li>
+          <li><code>SPC m r r</code> to refile</li>
+        </ul>
+      </div>
+    </div>
+    <div id="outline-container-org9e5a25c" class="outline-2">
+      <h2 id="org9e5a25c"><span class="section-number-2">16.</span>
+      Org Roam</h2>
+      <div class="outline-text-2" id="text-16">
+        <p>These keybinding only work after installing org-roam. To
+        install org roam edit your <code>init.el</code> file and
+        add <code>(org +roam2)</code> in its designated place.
+        Watch <a href=
+        "https://www.youtube.com/watch?v=AyhPmypHDEw">this
+        video</a> to understand what org-roam is.</p>
+        <ul class="org-ul">
+          <li><code>SPC n r f</code> Find an existing node or
+          create a new one.</li>
+          <li><code>SPC n r i</code> Insert a link to another
+          node.</li>
+          <li><code>SPC n r r</code> Toggle backlinks pane</li>
+          <li><code>SPC m m o t</code> Add a roam tag.</li>
+          <li><code>SPC m m o a</code> Add a roam alias.</li>
+        </ul>
+      </div>
+    </div>
+    <div id="outline-container-org758171f" class="outline-2">
+      <h2 id="org758171f"><span class="section-number-2">17.</span>
+      Sources</h2>
+      <div class="outline-text-2" id="text-17">
+        <ul class="org-ul">
+          <li><a href=
+          "https://www.youtube.com/watch?v=BRqjaN4-gGQ&amp;list=PLhXZp00uXBk4np17N39WvB80zgxlZfVwj&amp;index=10">
+          Link to the youtube video series</a></li>
+          <li><a href=
+          "https://www.ianjones.us/zaiste-programming-doom-emacs-tutorial/#org7ad2452">
+          This org file is mostly from the notes taken from the
+          series above by ianjones.us</a></li>
+          <li><a href="https://github.com/doomemacs/doomemacs">Doom
+          Emacs Documentation</a></li>
+          <li><a href=
+          "https://www.youtube.com/watch?v=s0ed8Da3mjE">Three Huge
+          Mistakes New Emacs Users Make</a> (they are included in
+          the tips in the beginning of the file)</li>
+        </ul>
+      </div>
+    </div>
+    <div id="outline-container-org0087b1f" class="outline-2">
+      <h2 id="org0087b1f"><span class="section-number-2">18.</span>
+      What to learn <code>[0/2]</code></h2>
+      <div class="outline-text-2" id="text-18">
+        <ul class="org-ul">
+          <li class="off"><code>[&nbsp;]</code> <a href=
+          "https://orgroam.com">Org Roam</a></li>
+          <li class="off"><code>[&nbsp;]</code> abbrev-mode</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="postamble" class="status">
+    <p class="author">Author: Hossein Naghdbishi</p>
+    <p class="date">Created: 2022-08-01 Mon 10:30</p>
+  </div>
 </body>
 </html>
