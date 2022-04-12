@@ -11,7 +11,8 @@
 * LSP-Mode
 - =lsp-update-server= select a language server to update.
 - =flycheck-list-errors= to see the errors detected by LSP.
-
-
+- =lsp-find-definition= to jump to where a symbol has been defined.
+- =lsp-find-references= to get list of all the places where a symbol has been used.
+- =lsp-rename= to rename a symbol across the file.
 * Sources
 - https://youtu.be/jPXIP46BnNA
