@@ -2,7 +2,7 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
 * A few tips for Emacs newbies
-- Use [[https://www.emacswiki.org/emacs/EmacsClient][emacsclient]] and set up a daemon, your Emacs experience will improve *a lot* and you will save a lot of time.
+- Use [[https://www.emacswiki.org/emacs/EmacsClient][EmacsClient]] and set up a daemon. Your Emacs experience will improve *a lot* and you will save a lot of time.
 - For better experience, use Emacs's inner file manager.
 - Get [[https://emacs-lsp.github.io/lsp-mode/][LSP]] up and running. It will turn Emacs into a fully-featured modern IDE. Emacs supports LSP for almost every language.
 - Try to avoid terminal version of Emacs when possible.
