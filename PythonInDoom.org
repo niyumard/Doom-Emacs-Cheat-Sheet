@@ -21,7 +21,7 @@
 - After opening a python file, =pyvenv-create= to create a venv.
 - =pyvenv-workon= to activate a venv by selection.
 - =pyvenv-activate= to activate a venv from a certain path.
-  - Once a venv is activated,=vterm= will open a terminal with that certain environment activated.
+  - Once a venv is activated, =vterm= will open a terminal with that certain environment activated.
 - =pyvenv-deactivate= to deactivate a venv.
 ** TODO pyenv
 
