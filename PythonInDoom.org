@@ -1,4 +1,6 @@
 #+TITLE: Python in Doom Emacs
+* First Steps
+- Run =doom doctor= and look inside the python section to see what executables you lack and install them.
 * Config
 - Don't forget to uncomment =python= in =init.el=
   - Change enable =lsp= under =:tools= and change =python= to =(python +lsp)= if you're planning to use a [[https://en.wikipedia.org/wiki/Language_Server_Protocol][Language Protocol Server]] using [[http://emacs-lsp.github.io/][lsp-mode]].
@@ -14,5 +16,15 @@
 - =lsp-find-definition= to jump to where a symbol has been defined.
 - =lsp-find-references= to get list of all the places where a symbol has been used.
 - =lsp-rename= to rename a symbol across the file.
+* Virtual Environments
+- Install virtualenv using =pip install --user --upgrade virtualenv=
+- After opening a python file, =pyvenv-create= to create a venv.
+- =pyvenv-workon= to activate a venv by selection.
+- =pyvenv-activate= to activate a venv from a certain path.
+  - Once a venv is activated,=vterm= will open a terminal with that certain environment activated.
+** TODO pyenv
+- =pyvenv-deactivate= to deactivate a venv.
+* Flycheck
+- See inside the variable =flycheck-checkers= to see from which software check your code. For python the list includes python-flake8, python-pylint, python-pycompile, python-pyright, and python-mypy.
 * Sources
 - https://youtu.be/jPXIP46BnNA
