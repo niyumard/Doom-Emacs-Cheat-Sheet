@@ -17,13 +17,16 @@
 - =lsp-find-references= to get list of all the places where a symbol has been used.
 - =lsp-rename= to rename a symbol across the file.
 * Virtual Environments
-- Install virtualenv using =pip install --user --upgrade virtualenv=
-- After opening a python file, =pyvenv-create= to create a venv.
-- =pyvenv-workon= to activate a venv by selection.
+** General
+- Once a virtual environment is activated, =vterm= will open a terminal with that certain environment activated.
+** [[https://virtualenv.pypa.io/en/stable/][Virtualenv]] or [[https://docs.python.org/3/library/venv.html][Venv]]
+- =pyvenv-workon= to activate a virtualenv defined in =~/.virtualenvs=.
+  - Install virtualenv using =pip install --user --upgrade virtualenv=
+  - After opening a python file, =pyvenv-create= to create a venv.
 - =pyvenv-activate= to activate a venv from a certain path.
-  - Once a venv is activated, =vterm= will open a terminal with that certain environment activated.
-- =pyvenv-deactivate= to deactivate a venv.
-** TODO pyenv
+  - Use =python -m venv PATH= to create a venv in a directory.
+- =pyvenv-deactivate= to deactivate a venv or a virtualenv.
+** TODO [[https://github.com/pyenv/pyenv][Pyenv]]
 
 
 * Flycheck
