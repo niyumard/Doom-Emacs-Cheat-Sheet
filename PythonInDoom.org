@@ -11,7 +11,11 @@
   - =python-shell-send-file= or =C-c C-l= to send another file to the shell.
   - =python-shell-send-buffer= or =C-c C-c= to send a selected region to the shell.
 * LSP-Mode
+** LSP related
 - =lsp-update-server= select a language server to update.
+- =lsp-workspace-folders-add= to interactively set a folder as an LSP workspace.
+- =lsp-workspace-folders-remove= to interactively unset a folder as an LSP workspace.
+** While coding
 - =flycheck-list-errors= to see the errors detected by LSP.
 - =lsp-find-definition= to jump to where a symbol has been defined.
 - =lsp-find-references= to get list of all the places where a symbol has been used.
