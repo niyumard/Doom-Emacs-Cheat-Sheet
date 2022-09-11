@@ -15,11 +15,13 @@
 - =lsp-update-server= select a language server to update.
 - =lsp-workspace-folders-add= to interactively set a folder as an LSP workspace.
 - =lsp-workspace-folders-remove= to interactively unset a folder as an LSP workspace.
+- =lsp-workspace-restart- to restart your workspace. Especially useful after activating a virtuan environment. 
 ** While coding
-- =flycheck-list-errors= to see the errors detected by LSP.
 - =lsp-find-definition= to jump to where a symbol has been defined.
 - =lsp-find-references= to get list of all the places where a symbol has been used.
 - =lsp-rename= to rename a symbol across the file.
+- =lsp-ui-imenu= to navigate definitions in your code
+- =flycheck-list-errors= to see the errors detected by LSP.
 * Virtual Environments
 ** General
 - Once a virtual environment is activated, =vterm= will open a terminal with that certain environment activated.
