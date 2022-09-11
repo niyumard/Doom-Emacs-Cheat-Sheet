@@ -292,6 +292,14 @@ These keybinding only work after installing org-roam. To install org roam edit y
 - =SPC n r r= Toggle backlinks pane 
 - =SPC m m o t= Add a roam tag.
 - =SPC m m o a= Add a roam alias.
+* Code Folding
+Code folding helps with code readability. First, make sure =fold= is not commented in your =init.el= file then move your cursor to the definition of a class or a function and try the following:
+
+- =z a= Toggle the fold at point.
+- =z m= Close all the folds.
+- =z r= Open all the folds.
+- =z j= Next folded region.
+- =z k= Previous folded region.
 
 * Sources
 - [[https://www.youtube.com/watch?v=BRqjaN4-gGQ&list=PLhXZp00uXBk4np17N39WvB80zgxlZfVwj&index=10][Link to the youtube video series]]
