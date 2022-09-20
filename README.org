@@ -29,7 +29,7 @@
 - =SPC o E= to open the shell (eshell) in fullscreen
 - =SPC o e= to open the shell (eshell) in a popup window
 - =SPC f r= recently visited files
-- =SPC f R= recently visited files in a project
+- =SPC p r= recently visited files in a project
 - =M-x projectile-discover-projects-in-directory= to find projects
   within given folder using Projectile
 - =M-x projectile-discover-projects-in-search-path= to find projects in
