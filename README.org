@@ -166,7 +166,7 @@
 - You can "link" some text with specific code =SPC m l= elisp: [[elisp:(+ 2 2)][(+ 2 2)]] when you click the link, emacs will evaluate the expression
 - Show [[elisp:org-agenda][My Agenda]]
 - [[shell:ls][List Files]] in directory
-** Defining custoom Link Types
+** Defining custom Link Types
 - [[https://youtube.com/watch?v=Febe4lUK5G4][Watch the video about custom links]]
 ** Linking to words & Bookmarks
 - =SPC n l= stores a link to a particular headline
