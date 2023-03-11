@@ -105,7 +105,7 @@
 - =f= and then the letter you want to navigate to.
   + =,= will go backward
   + =;= will go forward after that "find"
-- =t= to find and move cursor to the charachter before what you've searched.
+- =t= to find and move cursor to the character before what you've searched.
 - =v= puts you in visual mode. You can select text by with =v t some-char-you-navigate-to= or =v f some-char-you-navigate-to=
 - =;= to jump to the next find
 - =,= to jump to the previous one
