@@ -54,6 +54,7 @@
 - Move with =h=, =j=, =k=, =l=
 - Toggle =(= for simple view
 - =SPC .= to create or find a file
+  - Use either arrow keys, or hold =C-= with =h=,=j=,=k=, and =l= to choose between options.
 - =*= to select all directories.
 - =C= copy to another window
 - =R= move to another window
