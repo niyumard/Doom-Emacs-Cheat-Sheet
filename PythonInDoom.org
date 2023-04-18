@@ -1,27 +1,16 @@
 #+TITLE: Python in Doom Emacs
-* First Steps
-- Run =doom doctor= and look inside the python section to see what executables you lack and install them.
 * Config
 - Don't forget to uncomment =python= in =init.el=
   - Change enable =lsp= under =:tools= and change =python= to =(python +lsp)= if you're planning to use a [[https://en.wikipedia.org/wiki/Language_Server_Protocol][Language Protocol Server]] using [[http://emacs-lsp.github.io/][lsp-mode]].
   - Enable =(company +childframe)= under =:complection= as well.
+* First Steps
+- Run =doom doctor= and look inside the python section to see what executables you lack and install them.
 * Basics
+- First see the LSP section of the main file
 - =M-x run-python= to open a python shell.
   - =python-shell-send-region= or =C-c C-r= to send a selected region to the shell.
   - =python-shell-send-file= or =C-c C-l= to send another file to the shell.
   - =python-shell-send-buffer= or =C-c C-c= to send a selected region to the shell.
-* LSP-Mode
-** LSP related
-- =lsp-update-server= select a language server to update.
-- =lsp-workspace-folders-add= to interactively set a folder as an LSP workspace.
-- =lsp-workspace-folders-remove= to interactively unset a folder as an LSP workspace.
-- =lsp-workspace-restart- to restart your workspace. Especially useful after activating a virtuan environment. 
-** While coding
-- =lsp-find-definition= to jump to where a symbol has been defined.
-- =lsp-find-references= to get list of all the places where a symbol has been used.
-- =lsp-rename= to rename a symbol across the file.
-- =lsp-ui-imenu= to navigate definitions in your code
-- =flycheck-list-errors= to see the errors detected by LSP.
 * Virtual Environments
 ** General
 - Once a virtual environment is activated, =vterm= will open a terminal with that certain environment activated.

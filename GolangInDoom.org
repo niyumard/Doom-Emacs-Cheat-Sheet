@@ -1,0 +1,24 @@
+#+TITLE: Golang in Doom Emacs
+* Config
+- Don't forget to uncomment =go= in =init.el=
+  - Enable =lsp= under =:tools= and change =go= to =(go +lsp)= if you're planning to use a [[https://en.wikipedia.org/wiki/Language_Server_Protocol][Language Protocol Server]] using [[http://emacs-lsp.github.io/][lsp-mode]].
+  - Enable =syntax= under =:checkers= if you're planning to use golangci-lint as your linter via flycheck.
+  - Enable =(format +onsave)= under =:editor= to run =gofmt= on each save
+* First Steps
+- Run =doom doctor= and look inside the =:lang go= section to see what executables you lack and install them.
+* Basics
+- First see LSP part of the main file and figure out how they are used in go-mode. For exmaple:
+  - Running =go run file.go= corresponds to =SPC c e=
+  - Running =go fmt file.go= corresponds to =SPC c f=
+- =C-c C-g= or =M-x gorepl-run= to open a go repl on top of [[https://github.com/x-motemen/gore][gore]].
+- =C-c C-e= or =M-x gorepl-eval-region= to evaluate the selected region.
+* Tests & Benchmarks
+- =SPC m t a= to run all existing tests
+- =SPC m t b a= to run all existing benchmarks
+- =SPC m t G= to write tests for all functions using gotests
+- =SPC m t g= to write tests for selected functions using gotests
+* Go Playground
+- =M-x= (or equivalently) =SPC := with:
+  - =go-play-buffer= to send selected buffer to the Playground
+  - =go-play-region= to send selected region to the Playground
+  - =go-download-play= to download from the Playground
