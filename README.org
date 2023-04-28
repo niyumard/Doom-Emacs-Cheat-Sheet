@@ -1,5 +1,4 @@
 #+TITLE: The Ultimate Doom Emacs Cheatsheet
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
 * A few tips for Emacs newbies
 - Use [[https://www.emacswiki.org/emacs/EmacsClient][EmacsClient]] and set up a daemon. Your Emacs experience will improve *a lot* and you will save a lot of time.
@@ -11,7 +10,7 @@
   - =SPC h w= helps you find keyboard shortcuts for different commands.
   - =SPC h v= lets you see what's inside variables and change them.
   - =SPC h f= tells you about functions and where they are defined.
-- Github doesn't render org files very well. It's best that you clone the repository and open it in Emacs. If not possible, there's an [[https://naghdbishi.ir/Doom-Emacs-Cheat-Sheet/README.html][html version]] of README available, it's made with [[https://github.com/fniessen/org-html-themes][org-html-themes]].
+- Github doesn't render org files very well. It's best that you clone the repository and open it in Emacs.
 - See other files in this repository as well. Currently additional instructions for Go, and Python are also offered. If there's anything missing, or you can suggest a better workflow, make sure to contribute.
 * Command Abbreviations
 - =C= - "Control" key
@@ -74,7 +73,7 @@
 - =SPC b s= to save and name it
 ** Windows
 - =SPC w v= window split vertically
-- =SPC w s= window split horizonal
+- =SPC w s= window split horizontally
 - =SPC w w= to switch windows
 - =SPC w q= to close window, frame, quit EMACS if last frame
 - =SPC w += and =SPC w -= to increase and decrease window height
@@ -103,7 +102,7 @@
   - =:after= lets you set which package it should load after
 - You can use =:after!= to configure packages that are already there
 * Quick, horizontal movements with evil-snipe
-** Inine navigation
+** Inline navigation
 - =f= and then the letter you want to navigate to.
   + =,= will go backward
   + =;= will go forward after that "find"
@@ -156,7 +155,7 @@
 - =M-h= promotes a headline to the next level
 - =M-l= demotes
 - You can create lists
-  1. onw
+  1. one
   2. 2
   3. wooo
   4. 3
@@ -215,18 +214,16 @@
 - =org-tag-sparce-tree= will search for headings that only have a specific
   tag
 
-*** Setting a poperty for a task/headline
+*** Setting a property for a task/headline
 - =SPC m o= is used for setting a property.
 **** Marking Headlines with Categories
 - You can use [[https://orgmode.org/manual/Categories.html][categories]] to change the label in agenda view.
 **** Org-Habits
 - If you want to [[https://orgmode.org/manual/Tracking-your-habits.html][keep track of your habits]] using org mode, you can set the =STYLE= property to habit.
-
-  - If you want to set a category (for chani 
 ** Lists
 - Two types of lists, ordered and unordered lists
   - =SHIFT right= and =SHIFT left= can be used to change the type of lists.
-- You can also change an unorded list by changing the first item to 1. and then typing =C-c C-c= and vice verca.
+- You can also change an unordered list by changing the first item to 1. and then typing =C-c C-c= and vice versa.
 ** Checkboxes
 - [ ] This is still todo
 - [-] This is in progress
@@ -262,7 +259,7 @@
 - Forge is installed in emacs doom
 - =@= for forge
 - Set up forge with =M x forge-pull=
-  - the first time you will get a token from github
+  - the first time you will get a token from Github
 - =@ c p= to create a pull request with forge
   - select the base branch
   - then select the target branch
@@ -274,16 +271,18 @@
 - =lsp-update-server= select a language server to update.
 - =lsp-workspace-folders-add= to interactively set a folder as an LSP workspace.
 - =lsp-workspace-folders-remove= to interactively unset a folder as an LSP workspace.
-- =lsp-workspace-restart= to restart your workspace. Especially useful after activating a virtuan environment.
+- =lsp-workspace-restart= to restart your workspace. Especially useful after activating a virtual environment.
 ** While coding
-- =SPC c c= to run a compile comand (or a test, or any other command in the current directory)
+- =SPC c c= to run a compile command (or a test, or any other command in the current directory)
 - =SPC c C= to repeat the command above
 - =SPC c d= jump to var/func/... definitions
+  - =C o= (=evil-jump-backward=) Go back to your last position in the jump list
+  - =C i= (=evil-jump-forward=) Go forward in the jump list
 - =SPC c D= see references to var/func/...
-- =SPC c e= to evaluate the current buffer or region (when nothing is selected, equvalent to running =SPC c c= and writing =go run= + the file name.)
+- =SPC c e= to evaluate the current buffer or region (when nothing is selected, equivalent to running =SPC c c= and writing =go run= + the file name.)
 - =SPC c f= see references to var/func/...
 - =SPC c k= jump to documentation
-- =SPC c r= rename all references and defnitions for the var/func at point in all project files
+- =SPC c r= rename all references and definitions for the var/func at point in all project files
 - =SPC c s= send to REPL
 - =SPC c x= see all LSP diagnostics
 - =lsp-ui-imenu= to navigate definitions in your code
@@ -303,10 +302,10 @@
 :END:
 - =C-c C-c= to insert a tag for a heading in org mode.
 * Capturing
-- =SPC X= to capture (the new thing gets caputured to a single file but that's fine since we can easily refile it.)
+- =SPC X= to capture (the new thing gets captured to a single file but that's fine since we can easily refile it.)
 - =SPC m r r= to refile
 * Org Roam
-These keybinding only work after installing org-roam. To install org roam edit your =init.el= file and add =(org +roam2)= in its designated place. Watch [[https://www.youtube.com/watch?v=AyhPmypHDEw][this video]] to understand what org-roam is.
+These keybindings only work after installing org-roam. To install org-roam edit your =init.el= file and add =(org +roam2)= in its designated place. Watch [[https://www.youtube.com/watch?v=AyhPmypHDEw][this video]] to understand what org-roam is.
 
 - =SPC n r f= Find an existing node or create a new one.
 - =SPC n r i= Insert a link to another node.
@@ -330,4 +329,5 @@ Code folding helps with code readability. First, make sure =fold= is not comment
 
 * What to learn [0/2]
 - [ ] [[https://orgroam.com][Org Roam]]
+- [ ] LSP
 - [ ] abbrev-mode
