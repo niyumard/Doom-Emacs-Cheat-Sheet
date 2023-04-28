@@ -329,5 +329,5 @@ Code folding helps with code readability. First, make sure =fold= is not comment
 
 * What to learn [0/3]
 - [ ] LSP
-- [ ] [[https://orgroam.com][Org Roam]]
+- [ ] [[https://www.orgroam.com][Org Roam]]
 - [ ] abbrev-mode
