@@ -133,17 +133,15 @@
   =g s SPC select-one-letter y select-the-correction-spot-to-paste=
 - Use =t= to "teleport" the word from one place to another
   =g s SPC select-one-letter t select-the-correction-spot-to-teleport=
-* Multiple cursor in Emacs with Evil-multiedit
-- Make selections and then edit those selections interactively
-- =M-d= will select the current word, and again will find another
-  occurrence
-- =M-D= will find the occurrence upward
-- You can use a visual selection to select multiple words.
-- =R= will select all occurrences
-- =CTRL n= for next selection =CTRL p= for previous
+* Multiple cursor in Emacs with evil-multiedit
+- Using evil-multiedit (known as multiple cursors in other IDEs) you can make selections and then edit those selections simultaneously. To do this uncomment =multiple-cursors= in your =init.el=.
+- =M-d= will select the current word, press this again and it will find another occurrence
+- =M-D= will find an occurrence upward
+- You can use a visual selection to select multiple words as well.
+- =R= will select all occurrences.
+- =CTRL n= for next selection =CTRL p= for previous.
 - Exclude matches with =RET=
-- You can make an edit and the changes will be reflected in all the
-  selection
+- You can make an edit and the changes will be reflected to all the selections.
 * Org Mode
 ** Basics
 - Org mode gives you structure to your document
