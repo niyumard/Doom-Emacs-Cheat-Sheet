@@ -262,7 +262,7 @@
 ** Magit with Forge for Issuing Pull Requests - Emacs
 - Forge is installed in emacs doom
 - =@= for forge
-- Set up forge with =M x forge-pull=
+- Set up forge with =M-x forge-pull=
   - the first time you will get a token from Github
 - =@ c p= to create a pull request with forge
   - select the base branch
@@ -323,7 +323,7 @@ Code folding helps with code readability. First, make sure =fold= is not comment
 
 * Bi-directinal texts (RTL languages)
 - First uncomment =bidi= under =:input= in =init.el=
-- If your cursor moves at the wrong direction, see this [[https://github.com/emacs-evil/evil/issues/892][evil-mode bug]] and toggle evil-mode by pressing =C z= if neccessary.
+- If your cursor moves at the wrong direction, see this [[https://github.com/emacs-evil/evil/issues/892][evil-mode bug]] and toggle evil-mode by pressing =C-z= if neccessary.
 - To enable the bidi-mode everywhere and change the font of Persian/Arabic texts, you can use the snippet below:
 #+begin_src emacs-lisp
 (+bidi-global-mode 1)
