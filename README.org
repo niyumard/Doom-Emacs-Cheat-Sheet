@@ -144,7 +144,7 @@
 - You can make an edit and the changes will be reflected to all the selections.
 * Org Mode
 ** Basics
-- Org mode gives you structure to your document
+- Org mode gives you the ability to structure your document
 - =*= for a h1 =**= for an h2 and so on
 - You can =TAB= a section to fold a subtree (hide it)
 - You can use =SHIFT TAB= to cycle through folded states
