@@ -322,12 +322,20 @@ Code folding helps with code readability. First, make sure =fold= is not comment
 * Latex
 - TBD, for now see [[https://michaelneuper.com/posts/efficient-latex-editing-with-emacs/][Michael Neuper's blog post]] which has videos as well.
 
+* Bi-directinal texts (RTL languages)
+- First uncomment =bidi= under =:input= in =init.el=
+- If your cursor moves at the wrong direction, see this [[https://github.com/emacs-evil/evil/issues/892][evil-mode bug]] and toggle evil-mode by pressing =C z= if neccessary.
+- To enable the bidi-mode everywhere and change the font of Persian/Arabic texts, you can use the snippet below:
+#+begin_src emacs-lisp
+(+bidi-global-mode 1)
+(setq +bidi-want-smart-fontify nil)
+(set-fontset-font t 'arabic "Sahel") ; Works for Persian as well
+#+end_src
 * Sources
 - [[https://www.youtube.com/watch?v=BRqjaN4-gGQ&list=PLhXZp00uXBk4np17N39WvB80zgxlZfVwj&index=10][Zaiste Programming's Doom Emacs Tutorial]]
 - [[http://web.archive.org/web/20201108144238/https://www.ianjones.us/zaiste-programming-doom-emacs-tutorial#org7ad2452][This org file is mostly from the notes taken from the series above by ianjones.us]]
 - [[https://github.com/doomemacs/doomemacs][Doom Emacs Documentation]]
 - [[https://www.youtube.com/watch?v=s0ed8Da3mjE][DistroTube's YouTube Video]]
-
 * What to learn [0/3]
 - [ ] LSP
 - [ ] [[https://www.orgroam.com][Org Roam]]
