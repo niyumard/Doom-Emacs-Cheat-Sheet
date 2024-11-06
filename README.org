@@ -292,7 +292,7 @@
 * File Tree
 - Set up neotree or treemacs in your init.el file.
 - =SPC o p= for opening neotree or treemacs
-* Others
+* Miscellaneous
 - =C-c C-z= to insert a note for a heading in org mode.
 :LOGBOOK:
 - Note taken on [2020-12-18 Fri 21:52] \\
