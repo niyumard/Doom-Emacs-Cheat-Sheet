@@ -319,6 +319,9 @@ Code folding helps with code readability. First, make sure =fold= is not comment
 - =z j= Next folded region.
 - =z k= Previous folded region.
 
+* Latex
+- TBD, for now see [[https://michaelneuper.com/posts/efficient-latex-editing-with-emacs/][Michael Neuper's blog post]] which has videos as well.
+
 * Sources
 - [[https://www.youtube.com/watch?v=BRqjaN4-gGQ&list=PLhXZp00uXBk4np17N39WvB80zgxlZfVwj&index=10][Zaiste Programming's Doom Emacs Tutorial]]
 - [[http://web.archive.org/web/20201108144238/https://www.ianjones.us/zaiste-programming-doom-emacs-tutorial#org7ad2452][This org file is mostly from the notes taken from the series above by ianjones.us]]
