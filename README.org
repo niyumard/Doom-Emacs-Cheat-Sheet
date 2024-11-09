@@ -10,6 +10,7 @@
   - =SPC h w= helps you find keyboard shortcuts for different commands.
   - =SPC h v= lets you see what's inside variables and change them.
   - =SPC h f= tells you about functions and where they are defined.
+  - =SPC h b b= to see a list of all keybindings
 - Github doesn't render org files very well. It's best that you clone this repository and open it in Emacs.
 - See other files in this repository as well. Currently additional instructions for Go, and Python are also offered. If there's anything missing, or you can suggest a better workflow, make sure to contribute.
 * Command Abbreviations
@@ -335,6 +336,7 @@ Code folding helps with code readability. First, make sure =fold= is not comment
 - [[http://web.archive.org/web/20201108144238/https://www.ianjones.us/zaiste-programming-doom-emacs-tutorial#org7ad2452][This org file is mostly from the notes taken from the series above by ianjones.us]]
 - [[https://github.com/doomemacs/doomemacs][Doom Emacs Documentation]]
 - [[https://www.youtube.com/watch?v=s0ed8Da3mjE][DistroTube's YouTube Video]]
+- [[https://yusbk.github.io/2021/04/27/doom-emacs-tips/][A very nice collection of Doom Emacs tips by yusbk]]
 * What to learn [0/3]
 - [ ] LSP
 - [ ] [[https://www.orgroam.com][Org Roam]]
