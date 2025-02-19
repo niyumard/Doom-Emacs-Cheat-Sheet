@@ -13,6 +13,7 @@
   - =SPC h b b= to see a list of all keybindings
 - Github doesn't render org files very well. It's best that you clone this repository and open it in Emacs.
 - See other files in this repository as well. Currently additional instructions for Go, and Python are also offered. If there's anything missing, or you can suggest a better workflow, make sure to contribute.
+- Doom Emacs is a great emacs distro, but for a deeper understanding of Emacs, try setting up a minimal version of Emacs yourself using [[https://protesilaos.com/codelog/2024-11-28-basic-emacs-configuration/][this guide]] or [[https://arne.me/blog/emacs-from-scratch-part-two][similar]] [[https://www.youtube.com/watch?v=74zOY-vgkyw&list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ][ones]].
 * Command Abbreviations
 - =C= - "Control" key
 - =M= - "Alt" or "Option" key
