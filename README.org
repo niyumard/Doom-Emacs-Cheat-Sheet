@@ -2,9 +2,9 @@
 
 * A few tips for Emacs newbies
 - Use [[https://www.emacswiki.org/emacs/EmacsClient][EmacsClient]] and set up a daemon. Your Emacs experience will improve *a lot* and you will save a lot of time.
-- For better experience, use Emacs's inner file manager.
+- For better experience, use Emacs's built-in file manager.
 - Get [[https://emacs-lsp.github.io/lsp-mode/][LSP]] up and running. It will turn Emacs into a fully-featured modern IDE. Emacs supports LSP for almost every language.
-- Try to avoid terminal version of Emacs when possible.
+- Try to avoid the terminal version of Emacs when possible.
 - Use Doom Emacs's built-in helps to understand how things work under the hood and change them to suit your needs.
   - =SPC h k= tells you how key combinations translate to Emacs commands.
   - =SPC h w= helps you find keyboard shortcuts for different commands.
@@ -38,7 +38,7 @@
   the folder defined by the =projectile-project-search-path= variable
   using Projectile
 * Dired
-- Dired (Directory Editor) is how you interfaces with a directory
+- Dired (Directory Editor) is how you interface with a directory
 - Press =C-x d= to open dired.
 - Use =RET= to go to a folder or open a file.
 - Use =-= for going one folder back
@@ -69,19 +69,22 @@
 - =SPC b b= to open another buffer
   - workspace buffer
 - =SPC b B= you can see all the buffer
-- =SPC ,= to switch buffers (its an alias)
+- =SPC ,= to switch buffers (it's an alias)
 - =SPC SHIFT ,= to switch to all buffers
 - =SPC b X= You can create a scratch buffer
 - =SPC b s= to save and name it
 ** Windows
+- Windows are panes in your screen
 - =SPC w v= window split vertically
 - =SPC w s= window split horizontally
 - =SPC w w= to switch windows
 - =SPC w q= to close window, frame, quit EMACS if last frame
+- =SPC w o= to enlargen the current window
+- =SPC w u= to undo the last window change (e.g. revert back window states to before enlargening.)
+- =SPC w == to balance window sizes
 - =SPC w += and =SPC w -= to increase and decrease window height
 - =SPC w >= and =SPC w <= to increase and decrease window width
 - You can use vim motion keys to navigate between open windows for example =SPC w H= moves the window to the left.
-- Windows are panes in your screen
 ** Workspaces
 - =SPC TAB n= New workspace
 - =SPC TAB N= Newly named workspace
