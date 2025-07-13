@@ -323,7 +323,25 @@ Code folding helps with code readability. First, make sure =fold= is not comment
 - =z j= Next folded region.
 - =z k= Previous folded region.
 
-* Latex
+* Latex & pdf-view-mode
+** pdf-view-mode
+- If you want to be able to open PDF files in your Emacs you should uncomment =pdf= under =:tools= in your =init.el= file.
+- After opening a PDF, if pdf-view-mode isn't automatically enabled, enable it by running =SPC := and then =pdf-view-mode=. For the first time you may need to compile the tools needed by Emacs to view PDFs.
+- Make sure to use the keyboard shortcuts (especially the first four) instead of using your mouse.
+*** Zoom and scroll
+- =W= to fit PDF size to your window's width.
+- =C-d= to scroll up or move to the next page.
+- =C-u= to scroll down or move to the previous page.
+- =RET= to move one line below.
+- =o= to display an outline of the PDF.
+- =​== to enlargen the PDF.
+- =-= to shrink the PDF.
+- =H= to fit PDF size to your window's height.
+- =Q= to quit the PDF.
+
+
+** Latex
+- Clicking on a PDF made by Latex in pdf-view-mode will open the tex file that has made that page. Make sure to view your PDFs from inside Emacs.
 - TBD, for now see [[https://michaelneuper.com/posts/efficient-latex-editing-with-emacs/][Michael Neuper's blog post]] which has videos as well.
 
 * Bi-directinal texts (RTL languages)
