@@ -323,12 +323,11 @@ Code folding helps with code readability. First, make sure =fold= is not comment
 - =z j= Next folded region.
 - =z k= Previous folded region.
 
-* Latex & pdf-view-mode
-** pdf-view-mode
+* pdf-view-mode
 - If you want to be able to open PDF files in your Doom Emacs you should uncomment =pdf= under =:tools= in your =init.el= file.
 - After opening a PDF, if pdf-view-mode isn't automatically enabled, enable it by running =SPC := and then =pdf-view-mode=. For the first time you may need to compile the tools needed by Emacs to view PDFs.
 - Make sure to use the keyboard shortcuts (especially the first four) instead of using your mouse.
-*** Zoom and scroll
+** Zoom and scroll
 - =W= to fit PDF size to your window's width.
 - =C-d= to scroll up or move to the next page.
 - =C-u= to scroll down or move to the previous page.
@@ -342,7 +341,7 @@ Code folding helps with code readability. First, make sure =fold= is not comment
 - =Q= to quit the PDF.
 
 
-** Latex
+* Latex
 - Clicking on a PDF made by Latex in pdf-view-mode will open the tex file that has made that page. Make sure to view your PDFs from inside Emacs.
 - TBD, for now see [[https://michaelneuper.com/posts/efficient-latex-editing-with-emacs/][Michael Neuper's blog post]] which has videos as well.
 
@@ -353,7 +352,8 @@ Code folding helps with code readability. First, make sure =fold= is not comment
 #+begin_src emacs-lisp
 (+bidi-global-mode 1)
 (setq +bidi-want-smart-fontify nil)
-(set-fontset-font t 'arabic "Sahel") ; Works for Persian as well
+(add-hook! 'after-setting-font-hook :append
+  (set-fontset-font t 'arabic (font-spec :family "Sahel" :size 20)))
 #+end_src
 * Sources
 - [[https://www.youtube.com/watch?v=BRqjaN4-gGQ&list=PLhXZp00uXBk4np17N39WvB80zgxlZfVwj&index=10][Zaiste Programming's Doom Emacs Tutorial]]
