@@ -227,15 +227,17 @@
 - Two types of lists, ordered and unordered lists
   - =SHIFT right= and =SHIFT left= can be used to change the type of lists.
 - You can also change an unordered list by changing the first item to 1. and then typing =C-c C-c= and vice versa.
-** Checkboxes
+** Items (Checkboxes/Subtasks)
 - [ ] This is still todo
 - [-] This is in progress
-- [X] This is a done task
+- [X] This is a done item
 *** You can see how many are done with a "cookie" [1/2]
-- [-] Task 1
-- [X] Task 2
-- You can do this by adding [/] to the heading and pressing =C-c C-c=
-- You can't assign a tag or a priority
+- [-] Item 1
+- [X] Item 2
+- You can do this by adding =[/]= to the heading and pressing =C-c C-c=.
+- You can't assign a tag or a priority to items, only to headings.
+*** Turning normal lines into items and vice verca
+- You can select normal lines and turn them to items by =SPC m i=, the same keybinding on items turn them into normal lines
 ** Misc
 - =C-c C-z= to insert a note for a heading in org mode.
 :LOGBOOK:
