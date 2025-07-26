@@ -237,7 +237,9 @@
 - You can do this by adding =[/]= to the heading and pressing =C-c C-c=.
 - You can't assign a tag or a priority to items, only to headings.
 *** Turning normal lines into items and vice verca
-- You can select normal lines and turn them to items by =SPC m i=, the same keybinding on items turn them into normal lines
+- =SPC m i= to turn lines into items and vice verca.
+- =SPC m h= to turn lines into org headings and vice verca.
+- =SPC m s n= to focus on a single heading by hiding all others and =SPC m s N= to undo.
 ** Misc
 - =C-c C-z= to insert a note for a heading in org mode.
 :LOGBOOK:
