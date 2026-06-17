@@ -2,7 +2,7 @@
 * Config
 - Don't forget to uncomment =python= in =init.el=
   - Change enable =lsp= under =:tools= and change =python= to =(python +lsp)= if you're planning to use a [[https://en.wikipedia.org/wiki/Language_Server_Protocol][Language Protocol Server]] using [[http://emacs-lsp.github.io/][lsp-mode]].
-  - Enable =(company +childframe)= under =:complection= as well.
+  - Enable =(company +childframe)= under =:completion= as well.
 * First Steps
 - Run =doom doctor= and look inside the python section to see what executables you lack and install them.
 * Basics
