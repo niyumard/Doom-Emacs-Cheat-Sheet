@@ -366,6 +366,6 @@ Code folding helps with code readability. First, make sure =fold= is not comment
 - [[https://www.youtube.com/watch?v=s0ed8Da3mjE][DistroTube's YouTube Video]]
 - [[https://yusbk.github.io/2021/04/27/doom-emacs-tips/][A very nice collection of Doom Emacs tips by yusbk]]
 * What to learn [0/3]
-- [ ] LSP
-- [ ] [[https://www.orgroam.com][Org Roam]]
+- [ ] [[https://emacs-lsp.github.io/lsp-mode/][LSP]]
+- [ ] [[https://github.com/protesilaos/denote][Denote]]
 - [ ] abbrev-mode
